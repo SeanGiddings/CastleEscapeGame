@@ -10,5 +10,11 @@ namespace TestConsoleApp.Tests
         {
           Assert.True(true);
         }
+
+        [Fact]
+        public void IntentionalFailure()
+        {
+          Assert.True(false);
+        }
     }
 }
