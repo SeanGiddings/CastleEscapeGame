@@ -33,12 +33,12 @@ Your solution file will contain the project(s) that make up your application. Fo
 
 * From inside of the solution directory (or workspace folder, whatever you want to call that) create a new console application project:
   `dotnet new console -n TestConsoleApp -o TestConsoleApp.`
-  * -n tells dotnet to call the project "TestConsoleApp".
-  * -o tells dotnet to put that project in a folder called "TestConsoleApp".
+  * -n stands for "name" tells dotnet to name the project "TestConsoleApp".
+  * -o stands for "output" and tells dotnet to output that project into a folder called "TestConsoleApp".
 * Add your new console application project to the solution: `dotnet sln add .\TestConsoleApp\TestConsoleApp.csproj` (tab completion will help here).
 * Add your test project: `dotnet new xunit -n TestConsoleApp.Tests -o TestConsoleApp.Tests`
-  * -n tells dotnet to call the project "TestConsoleApp.Tests".
-  * -o tells dotnet to put that project in a folder called "TestConsoleApp.Tests".
+  * -n stands for "name" tells dotnet to name the project  "TestConsoleApp.Tests".
+  * -o stands for "output" and tells dotnet to output that project into a folder called "TestConsoleApp.Tests".
 * Add the test project to the solution: `dotnet sln add .\TestConsoleApp.Tests\TestConsoleApp.Tests.csproj`
 
 # Getting Ready for GitHub
@@ -48,13 +48,13 @@ Your solution file will contain the project(s) that make up your application. Fo
 * Initialize a new git repository in your solution directory: `git init`
 * Get ready to save the work you have done by staging it for source control: `git add .`
 * Commit the changes you have made so far: `git commit -m 'Initial commit'`
-* Add a remote repository so you can push your code to GitHub: (ex: `git remote add origin https://github.com/am1983/TestConsoleApp.git`)
+* Add a remote repository so you can push your code to GitHub: (ex: `git remote add origin https://github.com/[Your_GitHub_Username]/TestConsoleApp.git`)
 * Push the changes to GitHub: `git push -u origin master`
   * You only have to use `git push -u ...` once. This just tells git that you want to push changes upstream to the remote called origin from the branch called master. Once you have done this, you can just type `git push` to push future changesets to GitHub.
 
 # Setting up .NET Core Build Actions in GitHub
 
-* Go to your repository in GitHub (ex: https://github.com/am1983/TestConsoleApp)
+* Go to your repository in GitHub (ex: https://github.com/[Your_GitHub_Username]/TestConsoleApp)
 * Click on "Actions"
 * GitHub will detect what kind of code you have in the repository and should suggest a .NET Core workflow.
 * Add this workflow to your project.
@@ -67,7 +67,7 @@ Your solution file will contain the project(s) that make up your application. Fo
   * In terminal, type: `git add .` to add the changes to your next commit.
   * Type: `git commit -m 'Adding status badge'`
   * Type: `git push`
-* Go back to your repository in GitHub: (ex: https://github.com/am1983/TestConsoleApp)
+* Go back to your repository in GitHub: (ex: https://github.com/[Your_GitHub_Username]/TestConsoleApp)
 * Scroll down and you will see a status badge in the documentation below the files listed in your repository.
 
 # Developer Workflow
@@ -80,7 +80,8 @@ This is the workflow I follow when working on small projects. I'm intentionally 
 4) `dotnet build`: Let's make sure the code builds. Do NOT commit broken code. If it won't build, consider using "stash" instead.
 5) `dotnet test`: Assuming your project builds and you have written unit tests, now is a great time to run those tests. Do NOT commit code if the tests are broken.
 6) `git add .`: Stage the changes I have made. Let's get them ready to go.
-7) `git commit -m '{{message}}'`: Commit the changes locally. This defines the set of changes we are going to save.
+7) `git commit -m '[Your_Commit_Message]'`: Commit the changes locally. This defines the set of changes we are going to save.
+    - Your commit message should briefly explain the work that was done in the commit.
 8) `git push`: Push the changeset (commit) to GitHub (or whatever Git hosting service you are using).
 9) Walk away. Take a short break away from the monitor. 
 
