@@ -27,7 +27,7 @@ Your solution file will contain the project(s) that make up your application. Fo
   * -o tells dotnet to put that project in a folder called "TestConsoleApp.Tests".
 * Add the test project to the solution: "dotnet sln add .\TestConsoleApp.Tests\TestConsoleApp.Tests.csproj"
 
-# Getting Ready for Git
+# Getting Ready for GitHub
 
 * Add an empty file to the solution directory called ".gitignore". 
 * Consider copying and pasting the contents of this file to your new .gitignore file: https://github.com/dotnet/core/blob/master/.gitignore . This will tell Git to ignore changes to files that match the patterns in the .gitignore file.
@@ -37,3 +37,21 @@ Your solution file will contain the project(s) that make up your application. Fo
 * Add a remote repository so you can push your code to GitHub: (ex: "git remote add origin https://github.com/am1983/TestConsoleApp.git")
 * Push the changes to GitHub: "git push -u origin master"
   * You only have to use "git push -u ..." once. This just tells git that you want to push changes upstream to the remote called origin from the branch called master. Once you have done this, you can just type "git push" to push future changesets to GitHub.
+
+# Setting up .NET Core Build Actions in GitHub
+
+* Go to your repository in GitHub (ex: https://github.com/am1983/TestConsoleApp)
+* Click on "Actions"
+* GitHub will detect what kind of code you have in the repository and should suggest a .NET Core workflow.
+* Add this workflow to your project.
+  * There will be an option on the right hand side of the screen when you select the .NET Core workflow to commit the changes. Definitely do this. 
+* Back in Visual Studio Code (or your terminal) type "git pull". This will pull the changes that should have been committed to master when you added the .NET Core workflow.
+* Go back to GitHub and look for your new workflow under Actions. When you click on the .NET Core workflow, you will see an option to create a status badge on the right hand side. Click that button and then the button labelled "Copy status badge Markdown". This will copy some Markdown to your clipboard.
+* Create a new file in your solution directory called "readme.md".
+* Add the code you copied from GitHub in to this new file.
+* Save your changes and then commit them:
+  * In terminal, type: "git add ." to add the changes to your next commit.
+  * Type: "git commit -m 'Adding status badge'"
+  * Type: "git push"
+* Go back to your repository in GitHub: (ex: https://github.com/am1983/TestConsoleApp)
+* Scroll down and you will see a status badge in the documentation below the files listed in your repository.
