@@ -11,4 +11,4 @@ A solution file contains all of the code that supports your application. This wi
 * Create a folder where ALL of your code will live. Ideally, it will be named for your project. (ex: "TestConsoleApp")
 * Change in to that directory. ("cd TestConsoleApp")
 * Use the dotnet core CLI to create a solution file: "dotnet new sln"
-* * This will create a file with the .sln extension (ex: "TestConsoleApp.sln")
+  * This will create a file with the .sln extension (ex: "TestConsoleApp.sln")
