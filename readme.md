@@ -55,3 +55,19 @@ Your solution file will contain the project(s) that make up your application. Fo
   * Type: "git push"
 * Go back to your repository in GitHub: (ex: https://github.com/am1983/TestConsoleApp)
 * Scroll down and you will see a status badge in the documentation below the files listed in your repository.
+
+# Developer Workflow
+
+This is the workflow I follow when working on small projects. I'm intentionally omitting the discussion of branching from master, making changes, and then submitting a pull request. For the purposes of this documentation, that discussion can wait until later.
+
+1) "git pull": To get the latest updates to the code base.
+2) Make a small but complete set of changes.
+3) Add unit tests (as needed).
+4) "dotnet build": Let's make sure the code builds. Do NOT commit broken code. If it won't build, consider using "stash" instead.
+5) "dotnet test": Assuming your project builds and you have written unit tests, now is a great time to run those tests. Do NOT commit code if the tests are broken.
+6) "git add .": Stage the changes I have made. Let's get them ready to go.
+7) "git commit -m '{{message}}'": Commit the changes locally. This defines the set of changes we are going to save.
+8) "git push": Push the changeset (commit) to GitHub (or whatever Git hosting service you are using).
+9) Walk away. Take a short break away from the monitor. 
+
+**Rinse and repeat**
