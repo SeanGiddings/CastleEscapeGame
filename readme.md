@@ -4,6 +4,18 @@ This is just a test project so I can play around with .NET Core solutions, code 
 
 Nothing to see here. Please move along and have a great day!
 
+# Work in Progress
+
+This documentation is a work-in-progress. The end goals are to help new C# developers:
+
+* Create a .NET Core solution.
+* Create at least 2 .NET Core projects and add them to the solution.
+* Initialize a Git repo and get that on GitHub.
+* Add a GitHub Actions workflow that will build their .NET Core solution on each commit/PR and run any unit tests that have been created.
+* Add a status badge to their documentation so that anyone viewing or evaluating their work will be certain that the code will build on their computer.
+
+If you would like to help, please feel free to fork this repository and submit a PR with your proposed changes. If you are unable to submit a PR, please submit an issue and I will take a look at it.
+
 # Creating a Solution File
 
 A solution file contains all of the code that supports your application. This will often include the application itself ("TestConsoleApp") as well as unit tests ("TestConsoleApp.Tests") as well as other projects that are a part of your application. 
