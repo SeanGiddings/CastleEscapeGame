@@ -29,7 +29,7 @@ A solution file contains all of the code that supports your application. This wi
 
 # Creating New Projects
 
-Your solution file will contain the project(s) that make up your application. For the sake of this demo, I am adding two projects - one for the console application and the other for unit testing.
+Your solution file will contain the project(s) that make up your application. A solution file will allow you to manage multiple related projects as a single unit. As an added bonus, it will make the code easier to open in Visual Studio. For the sake of this demo, I am adding two projects - one for the console application and the other for unit testing.
 
 * From inside of the solution directory (or workspace folder, whatever you want to call that) create a new console application project:
   `dotnet new console -n TestConsoleApp -o TestConsoleApp.`
