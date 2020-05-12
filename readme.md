@@ -18,7 +18,7 @@ If you would like to help, please feel free to fork this repository and submit a
 
 # Creating a Solution File
 
-A solution file contains all of the code that supports your application. The solution file will allow you to manage multiple related projects as a single unit. As an added bonus, it will make the code easier to open in Visual Studio.  This will often include the application itself ("TestConsoleApp") as well as unit tests ("TestConsoleApp.Tests") as well as other projects that are a part of your application. 
+A solution file contains all of the code that supports your application. The solution file will allow you to manage multiple related projects as a single unit. This will often include the application itself ("TestConsoleApp") as well as unit tests ("TestConsoleApp.Tests") as well as other projects that are a part of your application. As an added bonus, the solution file will make opening the code in Visual Studio easier.
 
 * Create a folder where ALL of your code will live. Ideally, it will be named for your project. (ex: "TestConsoleApp")
 * Change in to that directory: `cd TestConsoleApp`
