@@ -16,6 +16,15 @@ This documentation is a work-in-progress. The end goals are to help new C# devel
 
 If you would like to help, please feel free to fork this repository and submit a PR with your proposed changes. If you are unable to submit a PR, please submit an issue and I will take a look at it.
 
+# Prerequisites
+
+This document assumes you have done the following:
+* Installed the .NET Core SDK (>= version 3.0)
+* Installed Git
+* Installed Visual Studio Code.
+
+If you haven't done any one of these things, please take care of that before attempting to follow along here.
+
 # Creating a Solution File
 
 A solution file contains all of the code that supports your application. The solution file will allow you to manage multiple related projects as a single unit. This will often include the application itself ("TestConsoleApp") as well as unit tests ("TestConsoleApp.Tests") as well as other projects that are a part of your application. As an added bonus, the solution file will make opening the code in Visual Studio easier.
