@@ -43,8 +43,7 @@ Your solution file will contain the project(s) that make up your application. Fo
 
 # Getting Ready for GitHub
 
-* Add an empty file to the solution directory called ".gitignore". 
-* Consider copying and pasting the contents of this file to your new .gitignore file: https://github.com/dotnet/core/blob/master/.gitignore . This will tell Git to ignore changes to files that match the patterns in the .gitignore file.
+* Generate a .gitignore file so only necessary files are added to your repository: `dotnet new ignore`
 * Initialize a new git repository in your solution directory: `git init`
 * Get ready to save the work you have done by staging it for source control: `git add .`
 * Commit the changes you have made so far: `git commit -m 'Initial commit'`
