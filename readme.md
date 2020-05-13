@@ -35,6 +35,8 @@ A solution file contains all of the code that supports your application. The sol
   * This will create a file with the .sln extension (ex: "TestConsoleApp.sln")
 
 * Alternative: You can make all three of the above steps happen at once with the following command: `dotnet new sln -n TestConsoleApp -o TestConsoleApp`. This will create a new dotnet solution file with the name "TestConsoleApp" and will place it in a new folder also called "TestConsoleApp".
+  * -n tells dotnet to name the solution "TestConsoleApp"
+  * -o tells dotnet to put the solution file in a folder called "TestConsoleApp".
 
 # Creating New Projects
 
