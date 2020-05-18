@@ -58,6 +58,14 @@ Your solution file will contain the project(s) that make up your application. Fo
 * Initialize a new git repository in your solution directory: `git init`
 * Get ready to save the work you have done by staging it for source control: `git add .`
 * Commit the changes you have made so far: `git commit -m 'Initial commit'`
+* On GitHub: Login and create a new repository called "TestConsoleApp".
+  * Don't worry about using a Repository Template right now.
+  * Make sure it is Public so others can see it.
+  * Skip initializing the repository with a README.
+  * Skip adding a .gitignore on GitHub. You've already done this.
+  * Skip adding a license.
+  * The next screen will show up with the title: "Quick Setup". Just below that, click on HTTPS and grab the URL for your repository. It will look something like `https://github.com/[Your_GitHub_Username]/TestConsoleApp.git`
+* Go back to the terminal / command prompt.
 * Add a remote repository so you can push your code to GitHub: (ex: `git remote add origin https://github.com/[Your_GitHub_Username]/TestConsoleApp.git`)
 * Push the changes to GitHub: `git push -u origin master`
   * You only have to use `git push -u ...` once. This just tells git that you want to push changes upstream to the remote called origin from the branch called master. Once you have done this, you can just type `git push` to push future changesets to GitHub.
@@ -67,18 +75,22 @@ Your solution file will contain the project(s) that make up your application. Fo
 * Go to your repository in GitHub (ex: https://github.com/[Your_GitHub_Username]/TestConsoleApp)
 * Click on "Actions"
 * GitHub will detect what kind of code you have in the repository and should suggest a .NET Core workflow.
-* Add this workflow to your project.
-  * There will be an option on the right hand side of the screen when you select the .NET Core workflow to commit the changes. Definitely do this. 
-* Back in Visual Studio Code (or your terminal) type `git pull`. This will pull the changes that should have been committed to master when you added the .NET Core workflow.
-* Go back to GitHub and look for your new workflow under Actions. When you click on the .NET Core workflow, you will see an option to create a status badge on the right hand side. Click that button and then the button labelled "Copy status badge Markdown". This will copy some Markdown to your clipboard.
-* Create a new file in your solution directory called "readme.md".
+* Click "Set up this workflow" to add this workflow to your project.
+  * You will be forwarded to a new screen that shows you the contents of a file called "dotnetcore.yml". On the right hand side, you will see a button that says "Start commit". Click that.
+  * In the first box that appears, give your commit a title. "Add workflow" should be sufficient.
+  * There will be a second box where you can enter an extended description. "Add workflow" is sufficient there as well.
+  * Make sure "Commit directly to the `master` branch" is checked.
+  * Click "Commit new file". 
+* Back in Visual Studio Code (or your terminal) type `git pull`. This will pull the changes that should have been committed to master when you added the .NET Core workflow. Specifically, you will see a new folder called ".github". Inside of that folder will be another folder called "workflows" which will contain a file named "dotnetcore.yml".
+* Go back to GitHub and click Actions. When you click on the .NET Core workflow on the left hand side, you will see a button labeled "Create status badge" on the right hand side. Click that button and then the button labeled "Copy status badge Markdown". This will copy some Markdown to your clipboard.
+* Create a new file in your solution's base directory called "README.md".
 * Add the code you copied from GitHub in to this new file.
 * Save your changes and then commit them:
   * In terminal, type: `git add .` to add the changes to your next commit.
   * Type: `git commit -m 'Adding status badge'`
   * Type: `git push`
 * Go back to your repository in GitHub: (ex: https://github.com/[Your_GitHub_Username]/TestConsoleApp)
-* Scroll down and you will see a status badge in the documentation below the files listed in your repository.
+* Scroll down and you will see a status badge in the documentation below the files listed in your repository. If everything went according to plan, it will say ".NET Core" and then will show "passing" in green.
 
 # Developer Workflow
 
@@ -93,6 +105,9 @@ This is the workflow I follow when working on small projects. I'm intentionally 
 7) `git commit -m '[Your_Commit_Message]'`: Commit the changes locally. This defines the set of changes we are going to save.
     - Your commit message should briefly explain the work that was done in the commit.
 8) `git push`: Push the changeset (commit) to GitHub (or whatever Git hosting service you are using).
-9) Walk away. Take a short break away from the monitor. 
+9) Walk away. Take a short break away from the monitor. Breaks are important.
+10) **Rinse and repeat**
 
-**Rinse and repeat**
+# Notes
+
+** Don't forget that it is OK to ask questions. Developers can't be expected to know or remember everything. **
