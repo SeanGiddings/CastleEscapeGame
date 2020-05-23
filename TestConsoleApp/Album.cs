@@ -4,15 +4,24 @@ namespace TestConsoleApp
 {
   class Album
   {
-    public string Title;
-    public string Artist;
+    public readonly string Title;
+    public readonly string Artist;
 
     
     public Album(string title, string artist)
     {
         Title = title;
         Artist = artist;
-        Console.WriteLine($"The best album by {artist} is {title}");
     }
+
+    public string GetDisplayText()
+    {
+        return $"Album: {Title} by {Artist}";
+    }
+
+    public bool Loan()
+    {
+    }
+    
   }
 }
