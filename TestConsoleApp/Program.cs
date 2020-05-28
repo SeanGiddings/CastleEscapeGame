@@ -24,8 +24,9 @@ namespace TestConsoleApp
         Console.WriteLine("░          ░   ▒   ░  ░  ░    ░        ░ ░      ░         ░   ░  ░  ░ ░          ░   ▒   ░░          ░   ");
         Console.WriteLine("░ ░            ░  ░      ░               ░  ░   ░  ░      ░  ░      ░ ░ ░            ░  ░            ░  ░");
         Console.WriteLine("░                                                                     ░                                  ");
-        System.Threading.Thread.Sleep(2000);
+        
         Console.WriteLine("A Text Adventure Game By Sean Giddings");
+        System.Threading.Thread.Sleep(2000);
     }
 
     static void TypeLine(string line)
@@ -53,6 +54,8 @@ namespace TestConsoleApp
 
 
             TitleCard();
+            TypeLine("\n \n \n Hit ENTER to begin\n");
+            Console.ReadLine();
             TypeLine("\n \n \nYou wake up, with a start! \n");
             System.Threading.Thread.Sleep(1000);
             TypeLine("You are laying on a small, hard BED in an otherwise (almost) empty room. You have a small COMPASS in your pocket, but no other belongings.\n");
