@@ -19,9 +19,6 @@ namespace TestConsoleApp
         return $"Album: {Title} by {Artist}";
     }
 
-    public bool Loan()
-    {
-    }
     
   }
 }

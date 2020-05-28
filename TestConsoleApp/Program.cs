@@ -44,7 +44,7 @@ namespace TestConsoleApp
 
             //Movie testy = new Movie("Jurassic Park", 1.5);
             //VideoGame videoGame = new VideoGame("The Last of Us","Playstation 4");
-<<<<<<< HEAD
+
             //Album album = new Album("Kid A", "RadioHead");
 
             //testy.Title = "The Pest";
@@ -53,31 +53,25 @@ namespace TestConsoleApp
 
 
             TitleCard();
-            TypeLine("\n \n \nYou wake up, with a start! You are laying on a small, hard bed in an otherwise (almost) empty room. You have a small compass in your pocket, but no other belongings.\n");
+            TypeLine("\n \n \nYou wake up, with a start! \n");
             System.Threading.Thread.Sleep(1000);
-            TypeLine("At the north end of the room, there is a large ornate mirror.\n");
+            TypeLine("You are laying on a small, hard BED in an otherwise (almost) empty room. You have a small COMPASS in your pocket, but no other belongings.\n");
             System.Threading.Thread.Sleep(1000);
-            TypeLine("On the east side of the room, a window.\n");
+            TypeLine("At the NORTH end of the room, there is a large ornate MIRROR.\n");
             System.Threading.Thread.Sleep(1000);
-            TypeLine("To the West, a desk.\n");
+            TypeLine("On the EAST side of the room, a WINDOW.\n");
             System.Threading.Thread.Sleep(1000);
-            TypeLine("The bed you are currently sitting on is to the south.\n");
+            TypeLine("To the WEST, a DESK.\n");
             System.Threading.Thread.Sleep(1000);
-            TypeLine("You look around the small room, and see the sparse decorations, the stone walls, the single window. \n");
+            TypeLine("The BED you are currently sitting on is to the SOUTH.\n");
             System.Threading.Thread.Sleep(1000);
-            TypeLine("There seems to be no way in or out.");
+            TypeLine("You look around the small room, and see the sparse decorations, the stone walls, the single WINDOW with only the sky in view. \n");
+            System.Threading.Thread.Sleep(1000);
+            TypeLine("You seem to be in a tower. \n");
+            System.Threading.Thread.Sleep(1000);
+            TypeLine("There seems to be no way in or out.\n");
 
-
-
-=======
-            Album album1 = new Album("Kid A", "RadioHead");
-            Album album2 = new Album("Stranger in the Alps", "Phoebe Bridgers");
-            Album album3 = new Album("Endless Summer", "The Midnight");
-
-            Console.WriteLine(album1.GetDisplayText());
-            Console.WriteLine(album2.GetDisplayText());
-            Console.WriteLine(album3.GetDisplayText());
->>>>>>> b432a3f0a53d4e752ee3e55d5e8cce19fb12246d
+            Console.ReadLine();
         }
     }
 }
