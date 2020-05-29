@@ -14,14 +14,20 @@ namespace TestConsoleApp
         Artist = artist;
     }
 
+    public void Loan()
+    {
+    }
+
+    public void Return()
+    {
+    }
+    
     public string GetDisplayText()
     {
         return $"Album: {Title} by {Artist}";
     }
 
-    public bool Loan()
-    {
-    }
+
     
   }
 }
