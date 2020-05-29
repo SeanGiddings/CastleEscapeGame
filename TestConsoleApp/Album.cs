@@ -21,6 +21,7 @@ namespace TestConsoleApp
     public void Return()
     {
     }
+
     
     public string GetDisplayText()
     {
