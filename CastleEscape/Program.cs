@@ -40,9 +40,15 @@ namespace CastleEscape
             }
         }
     }
+    
+
         static void Main(string[] args)
         {
 
+    Console.ForegroundColor 
+            = ConsoleColor.Blue; 
+Console.WriteLine("Changed Foreground Color: {0}", 
+                                Console.ForegroundColor); 
             TitleCard();
             TypeLine("\n \n \n Hit ENTER to begin");
             Console.ReadLine();
