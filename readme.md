@@ -1,4 +1,4 @@
-![.NET Core](https://github.com/am1983/TestConsoleApp/workflows/.NET%20Core/badge.svg)
+![.NET Core](https://github.com/am1983/CastleEscape/workflows/.NET%20Core/badge.svg)
 
 This is just a test project so I can play around with .NET Core solutions, code organization, and GitHub actions.
 
@@ -27,30 +27,30 @@ If you haven't done any one of these things, please take care of that before att
 
 # Creating a Solution File
 
-A solution file contains all of the code that supports your application. The solution file will allow you to manage multiple related projects as a single unit. This will often include the application itself ("TestConsoleApp") as well as unit tests ("TestConsoleApp.Tests") as well as other projects that are a part of your application. As an added bonus, the solution file will make opening the code in Visual Studio easier.
+A solution file contains all of the code that supports your application. The solution file will allow you to manage multiple related projects as a single unit. This will often include the application itself ("CastleEscape") as well as unit tests ("CastleEscape.Tests") as well as other projects that are a part of your application. As an added bonus, the solution file will make opening the code in Visual Studio easier.
 
-* Create a folder where ALL of your code will live. Ideally, it will be named for your project. (ex: "TestConsoleApp")
-* Change in to that directory: `cd TestConsoleApp`
+* Create a folder where ALL of your code will live. Ideally, it will be named for your project. (ex: "CastleEscape")
+* Change in to that directory: `cd CastleEscape`
 * Use the dotnet core CLI to create a solution file: `dotnet new sln`
-  * This will create a file with the .sln extension (ex: "TestConsoleApp.sln")
+  * This will create a file with the .sln extension (ex: "CastleEscape.sln")
 
-* Alternative: You can make all three of the above steps happen at once with the following command: `dotnet new sln -n TestConsoleApp -o TestConsoleApp`. This will create a new dotnet solution file with the name "TestConsoleApp" and will place it in a new folder also called "TestConsoleApp".
-  * -n tells dotnet to name the solution "TestConsoleApp"
-  * -o tells dotnet to put the solution file in a folder called "TestConsoleApp".
+* Alternative: You can make all three of the above steps happen at once with the following command: `dotnet new sln -n CastleEscape -o CastleEscape`. This will create a new dotnet solution file with the name "CastleEscape" and will place it in a new folder also called "CastleEscape".
+  * -n tells dotnet to name the solution "CastleEscape"
+  * -o tells dotnet to put the solution file in a folder called "CastleEscape".
 
 # Creating New Projects
 
 Your solution file will contain the project(s) that make up your application. For the sake of this demo, I am adding two projects - one for the console application and the other for unit testing.
 
 * From inside of the solution directory (or workspace folder, whatever you want to call that) create a new console application project:
-  `dotnet new console -n TestConsoleApp -o TestConsoleApp.`
-  * -n stands for "name" tells dotnet to name the project "TestConsoleApp".
-  * -o stands for "output" and tells dotnet to output that project into a folder called "TestConsoleApp".
-* Add your new console application project to the solution: `dotnet sln add .\TestConsoleApp\TestConsoleApp.csproj` (tab completion will help here).
-* Add your test project: `dotnet new xunit -n TestConsoleApp.Tests -o TestConsoleApp.Tests`
-  * -n stands for "name" tells dotnet to name the project  "TestConsoleApp.Tests".
-  * -o stands for "output" and tells dotnet to output that project into a folder called "TestConsoleApp.Tests".
-* Add the test project to the solution: `dotnet sln add .\TestConsoleApp.Tests\TestConsoleApp.Tests.csproj`
+  `dotnet new console -n CastleEscape -o CastleEscape.`
+  * -n stands for "name" tells dotnet to name the project "CastleEscape".
+  * -o stands for "output" and tells dotnet to output that project into a folder called "CastleEscape".
+* Add your new console application project to the solution: `dotnet sln add .\CastleEscape\CastleEscape.csproj` (tab completion will help here).
+* Add your test project: `dotnet new xunit -n CastleEscape.Tests -o CastleEscape.Tests`
+  * -n stands for "name" tells dotnet to name the project  "CastleEscape.Tests".
+  * -o stands for "output" and tells dotnet to output that project into a folder called "CastleEscape.Tests".
+* Add the test project to the solution: `dotnet sln add .\CastleEscape.Tests\CastleEscape.Tests.csproj`
 
 # Getting Ready for GitHub
 
@@ -58,21 +58,21 @@ Your solution file will contain the project(s) that make up your application. Fo
 * Initialize a new git repository in your solution directory: `git init`
 * Get ready to save the work you have done by staging it for source control: `git add .`
 * Commit the changes you have made so far: `git commit -m 'Initial commit'`
-* On GitHub: Login and create a new repository called "TestConsoleApp".
+* On GitHub: Login and create a new repository called "CastleEscape".
   * Don't worry about using a Repository Template right now.
   * Make sure it is Public so others can see it.
   * Skip initializing the repository with a README.
   * Skip adding a .gitignore on GitHub. You've already done this.
   * Skip adding a license.
-  * The next screen will show up with the title: "Quick Setup". Just below that, click on HTTPS and grab the URL for your repository. It will look something like `https://github.com/[Your_GitHub_Username]/TestConsoleApp.git`
+  * The next screen will show up with the title: "Quick Setup". Just below that, click on HTTPS and grab the URL for your repository. It will look something like `https://github.com/[Your_GitHub_Username]/CastleEscape.git`
 * Go back to the terminal / command prompt.
-* Add a remote repository so you can push your code to GitHub: (ex: `git remote add origin https://github.com/[Your_GitHub_Username]/TestConsoleApp.git`)
+* Add a remote repository so you can push your code to GitHub: (ex: `git remote add origin https://github.com/[Your_GitHub_Username]/CastleEscape.git`)
 * Push the changes to GitHub: `git push -u origin master`
   * You only have to use `git push -u ...` once. This just tells git that you want to push changes upstream to the remote called origin from the branch called master. Once you have done this, you can just type `git push` to push future changesets to GitHub.
 
 # Setting up .NET Core Build Actions in GitHub
 
-* Go to your repository in GitHub (ex: https://github.com/[Your_GitHub_Username]/TestConsoleApp)
+* Go to your repository in GitHub (ex: https://github.com/[Your_GitHub_Username]/CastleEscape)
 * Click on "Actions"
 * GitHub will detect what kind of code you have in the repository and should suggest a .NET Core workflow.
 * Click "Set up this workflow" to add this workflow to your project.
@@ -89,7 +89,7 @@ Your solution file will contain the project(s) that make up your application. Fo
   * In terminal, type: `git add .` to add the changes to your next commit.
   * Type: `git commit -m 'Adding status badge'`
   * Type: `git push`
-* Go back to your repository in GitHub: (ex: https://github.com/[Your_GitHub_Username]/TestConsoleApp)
+* Go back to your repository in GitHub: (ex: https://github.com/[Your_GitHub_Username]/CastleEscape)
 * Scroll down and you will see a status badge in the documentation below the files listed in your repository. If everything went according to plan, it will say ".NET Core" and then will show "passing" in green.
 
 # Developer Workflow

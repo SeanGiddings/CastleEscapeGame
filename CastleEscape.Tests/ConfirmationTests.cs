@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace TestConsoleApp.Tests
+namespace CastleEscape.Tests
 {
     public class ConfirmationTests
     {

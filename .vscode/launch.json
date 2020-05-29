@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/TestConsoleApp/bin/Debug/netcoreapp3.1/TestConsoleApp.dll",
+            "program": "${workspaceFolder}/CastleEscape/bin/Debug/netcoreapp3.1/CastleEscape.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/TestConsoleApp",
+            "cwd": "${workspaceFolder}/CastleEscape",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false

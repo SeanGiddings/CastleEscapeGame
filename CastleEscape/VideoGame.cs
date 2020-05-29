@@ -1,6 +1,6 @@
 using System;
 
-namespace TestConsoleApp 
+namespace CastleEscape 
 {
   class VideoGame
   {
