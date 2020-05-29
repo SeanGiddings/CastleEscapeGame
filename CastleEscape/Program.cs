@@ -66,9 +66,10 @@ namespace CastleEscape
             System.Threading.Thread.Sleep(1000);
             TypeLine("You seem to be in a tower.");
             System.Threading.Thread.Sleep(1000);
-            TypeLine("There seems to be no way in or out.");*/
-
-            Player player = new Player('S');
+            TypeLine("There seems to be no way in or out.");
+            System.Threading.Thread.Sleep(1000);*/
+            TypeLine("Where would you like to go?");
+            Player player = new Player();
         }
     }
 }
