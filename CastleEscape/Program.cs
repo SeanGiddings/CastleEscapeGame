@@ -48,7 +48,7 @@ namespace CastleEscape
     Console.ForegroundColor 
             = ConsoleColor.Blue; 
             TitleCard();
-            /*TypeLine("\n \n \n Hit ENTER to begin");
+            TypeLine("\n \n \n Hit ENTER to begin");
             Console.ReadLine();
             TypeLine("\n \n \nYou wake up, with a start! \n");
             System.Threading.Thread.Sleep(1000);
@@ -67,8 +67,11 @@ namespace CastleEscape
             TypeLine("You seem to be in a tower.");
             System.Threading.Thread.Sleep(1000);
             TypeLine("There seems to be no way in or out.");
-            System.Threading.Thread.Sleep(1000);*/
+            System.Threading.Thread.Sleep(1000);
             TypeLine("Where would you like to go?");
+            Console.ForegroundColor = ConsoleColor.Yellow; 
+            TypeLine("For Help/Intructions, type \"HELP\"");
+            Console.ForegroundColor = ConsoleColor.Blue; 
             Player player = new Player();
         }
     }

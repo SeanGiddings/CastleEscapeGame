@@ -21,6 +21,19 @@ namespace CastleEscape
             }
         }
 
+        public void HelpMenu()
+        {
+                 Console.ForegroundColor = ConsoleColor.Yellow; 
+                Console.WriteLine("===                 HELP MENU                    ===");
+                Console.WriteLine("=== To choose a direction, write N, S, E, or W   ===");
+                Console.WriteLine("=== To examine your surroundings, write LOOK     ===");
+                Console.WriteLine("=== To use an item, type USE ______________      ===");
+                Console.WriteLine("=== (For example, \"USE KEY\" or \"USE COMPASS\")    ===");
+                Console.WriteLine("=== To see your inventory type INV               ===");
+                Console.WriteLine("=== To see this menu again, type HELP            ===");
+                Console.ForegroundColor = ConsoleColor.Blue; 
+        }
+
         public void CheckPlayerLocation()
         {
             if (PlayerLocation == 'S')
@@ -74,19 +87,14 @@ namespace CastleEscape
             }
             else if (playerCommand == "INVENTORY" || playerCommand == "INV")
             {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta; 
                 Console.WriteLine("Your bag contains:");
                   inventory.ForEach(Console.WriteLine);
+                  Console.ForegroundColor = ConsoleColor.Blue; 
             }
             else if (playerCommand == "HELP")
             {
-                Console.ForegroundColor = ConsoleColor.Yellow; 
-                Console.WriteLine("===                 HELP MENU                    ===");
-                Console.WriteLine("=== To choose a direction, write N, S, E, or W   ===");
-                Console.WriteLine("=== To examine your surroundings, write LOOK     ===");
-                Console.WriteLine("=== To use an item, type USE ______________      ===");
-                Console.WriteLine("=== (For example, \"USE KEY\" or \"USE COMPASS\")    ===");
-                Console.WriteLine("=== To see this menu again, type HELP            ===");
-                Console.ForegroundColor = ConsoleColor.Blue; 
+                HelpMenu();
             }
         }
 
