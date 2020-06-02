@@ -8,8 +8,12 @@ namespace CastleEscape
         //Player always starts to the South of the room.
         public char PlayerLocation = 'S';
 
-        public delegate void PlayerLocationEvents(char currentPlayerLocation);
-        public static event PlayerLocationEvents locationChanged;
+        public delegate void PlayerLocationEvents(List<string> currentInventory);
+        public static event PlayerLocationEvents wentNorth;
+        public static event PlayerLocationEvents wentSouth;
+        public static event PlayerLocationEvents wentWest;
+        public static event PlayerLocationEvents wentEast;
+
         public bool IsPlaying = false;
         List<string> inventory = new List<string>();
 
@@ -65,19 +69,19 @@ namespace CastleEscape
             if (playerCommand == "SOUTH" || playerCommand == "S")
             {
                 PlayerLocation = 'S';
-                locationChanged?.Invoke(PlayerLocation);
+                wentSouth?.Invoke(inventory);
                 CheckPlayerLocation();
             }
             else if (playerCommand == "NORTH" || playerCommand == "N")
             {
                 PlayerLocation = 'N';
-                locationChanged?.Invoke(PlayerLocation);
+                wentNorth?.Invoke(inventory);
                 CheckPlayerLocation();
             }
             else if (playerCommand == "EAST" || playerCommand == "E")
             {
                 PlayerLocation = 'E';
-                locationChanged?.Invoke(PlayerLocation);
+                wentEast?.Invoke(inventory);
                 if (!CheckInventory("KEY"))
                 {
                     inventory.Add("KEY");
@@ -87,7 +91,7 @@ namespace CastleEscape
             else if (playerCommand == "WEST" || playerCommand == "W")
             {
                 PlayerLocation = 'W';
-                locationChanged?.Invoke(PlayerLocation);
+                wentWest?.Invoke(inventory);
                 CheckPlayerLocation();
             }
             else if (playerCommand == "EXIT")

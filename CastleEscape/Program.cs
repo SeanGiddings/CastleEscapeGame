@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CastleEscape
 {
@@ -44,14 +45,15 @@ namespace CastleEscape
             }
         }
 
-        private static void HelloWorld(char currentPlayerLocation) {
-            Console.WriteLine("Hello World" + currentPlayerLocation);
+        private static void InventoryCheck(List<string> currentInventory) {
+            currentInventory.ForEach(Console.WriteLine);
         }
 
 
         static void Main(string[] args)
         {
-            Player.locationChanged += HelloWorld;
+            Player.wentSouth += InventoryCheck;
+
             int textDelay = 0;
             Console.ForegroundColor = ConsoleColor.Blue;
             TitleCard();
