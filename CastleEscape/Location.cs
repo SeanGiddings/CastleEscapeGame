@@ -5,6 +5,13 @@ namespace CastleEscape
 {
     class Location
     {
+        public void Look()
+        {
+
+        }
+
+
+
             public Location()
         {
                 
