@@ -6,7 +6,7 @@ namespace CastleEscape
     class Player
     {
         //Player always starts to the South of the room.
-        public char PlayerLocation = 'S';
+        public static char PlayerLocation = 'S';
 
         public delegate void PlayerLocationEvents(List<string> currentInventory);
         public static event PlayerLocationEvents wentNorth;
@@ -108,6 +108,15 @@ namespace CastleEscape
             else if (playerCommand == "HELP")
             {
                 HelpMenu();
+            }
+            else if (playerCommand == "LOOK")
+            {
+                //Program.TypeLine("You see the BED you woke up on.");
+                Location.Look();
+            }
+            else 
+            {
+                Console.WriteLine($"\"{playerCommand}\" is not a proper command. Please type \"HELP\" for all available commands");
             }
         }
 
