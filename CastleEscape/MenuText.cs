@@ -50,7 +50,7 @@ namespace CastleEscape
             Console.ForegroundColor = ConsoleColor.Blue;
         }
 
-            public static void HelpMenu()
+        public static void HelpMenu()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("===                 HELP MENU                    ===");
@@ -62,6 +62,27 @@ namespace CastleEscape
             Console.WriteLine("=== To see this menu again, type HELP            ===");
             Console.ForegroundColor = ConsoleColor.Blue;
         }
+
+        public static void ChangeToRed(string keyword, string newColor)
+        {
+
+            ConsoleColor consoleColor = ConsoleColor.White;
+            try
+            {
+                consoleColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), newColor, true);
+            }
+            catch (Exception)
+            {
+                //Invalid color
+            }
+
+            Console.ForegroundColor = consoleColor;
+            //Console.ForegroundColor = ConsoleColor.newColor;
+            Program.TypeLine(keyword);
+            Console.ForegroundColor = ConsoleColor.Blue;
+        }
+
+
 
         public MenuText()
         {

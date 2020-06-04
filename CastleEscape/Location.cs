@@ -7,9 +7,12 @@ namespace CastleEscape
     {
         public static void Look()
         {
+            
             if (Player.PlayerLocation == 'S')
             {
-                Program.TypeLine("You see the BED you woke up on.");
+                //String SKeyword = MenuText.ChangeToRed("BED");
+               // Program.TypeLine($"You see the {SKeyword} you woke up on.");
+                SouthLook();
             }
             else if (Player.PlayerLocation == 'N')
             {
@@ -23,6 +26,13 @@ namespace CastleEscape
             {
                 Program.TypeLine("You see a DESK.");
             }
+        }
+
+        public static void SouthLook()
+        {
+                Program.TypeLine("You see the ");
+                MenuText.ChangeToRed("BED", "Red");
+                Program.TypeLine(" you woke up on.\n");
         }
 
             public static void UseItem(string useCommand)

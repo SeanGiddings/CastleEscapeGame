@@ -17,7 +17,7 @@ namespace CastleEscape
                 System.Threading.Thread.Sleep(20); // Sleep for 150 milliseconds
                 if (i == line.Length - 1)
                 {
-                    Console.Write("\n");
+                    //Console.Write("\n");
                 }
             }
         }
@@ -37,7 +37,7 @@ namespace CastleEscape
                 MenuText.TitleCard();
                 MenuText.OpeningText();
             }
-            System.Threading.Thread.Sleep(1000);
+            
             TypeLine("Where would you like to go?");
             Player player = new Player();
         }
