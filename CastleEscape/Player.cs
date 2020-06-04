@@ -70,10 +70,6 @@ namespace CastleEscape
             {
                 PlayerLocation = 'E';
                 wentEast?.Invoke(inventory);
-                if (!CheckInventory("KEY"))
-                {
-                    inventory.Add("KEY");
-                }
                 CheckPlayerLocation();
             }
             else if (playerCommand == "WEST" || playerCommand == "W")
