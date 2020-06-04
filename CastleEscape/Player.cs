@@ -15,7 +15,7 @@ namespace CastleEscape
         public static event PlayerLocationEvents wentEast;
 
         public bool IsPlaying = false;
-        List<string> inventory = new List<string>();
+        public static List<string> inventory = new List<string>();
 
         public Player()
         {
@@ -101,13 +101,17 @@ namespace CastleEscape
             {
                 Location.Look();
             }
+            else if (playerCommand.Contains("USE") == true)
+            {
+                Location.UseItem(playerCommand);
+            }
             else 
             {
                 Console.WriteLine($"\"{playerCommand}\" is not a proper command. Please type \"HELP\" for all available commands");
             }
         }
 
-        public bool CheckInventory(string itemName)
+        public static bool CheckInventory(string itemName)
         {
             return inventory.Contains(itemName);
         }
