@@ -33,9 +33,9 @@ namespace CastleEscape
             System.Threading.Thread.Sleep(textDelay);
             Program.TypeLine("At the NORTH end of the room, there is a large ornate MIRROR.");
             System.Threading.Thread.Sleep(textDelay);
-            Program.TypeLine("On the EAST side of the room, a WINDOW.");
+            Program.TypeLine("On the EAST side of the room, a DESK.");
             System.Threading.Thread.Sleep(textDelay);
-            Program.TypeLine("To the WEST, a DESK.");
+            Program.TypeLine("To the WEST, a WINDOW.");
             System.Threading.Thread.Sleep(textDelay);
             Program.TypeLine("The BED you are currently sitting on is to the SOUTH.\n");
             System.Threading.Thread.Sleep(textDelay);
@@ -63,7 +63,7 @@ namespace CastleEscape
             Console.ForegroundColor = ConsoleColor.Blue;
         }
 
-        public static void ChangeToRed(string keyword, string newColor)
+        public static void ChangeTextColor(string keyword, string newColor)
         {
 
             ConsoleColor consoleColor = ConsoleColor.White;

@@ -51,13 +51,15 @@ namespace CastleEscape
         }
 
         public void PlayerCommand()
-        {
+        {   
+            Console.ForegroundColor = ConsoleColor.White;
             string input = Console.ReadLine();
             string playerCommand = input.ToUpper();
+            Console.ForegroundColor = ConsoleColor.Blue;
             if (playerCommand == "SOUTH" || playerCommand == "S")
             {
                 PlayerLocation = 'S';
-                wentSouth?.Invoke(inventory);
+                //wentSouth?.Invoke(inventory);
                 CheckPlayerLocation();
             }
             else if (playerCommand == "NORTH" || playerCommand == "N")

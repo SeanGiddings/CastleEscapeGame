@@ -6,7 +6,7 @@ namespace CastleEscape
     class Program
     {
         //Debug = true will turn off the opening text scroll for quick debugging
-        private static bool Debug = true;
+        private static bool Debug = false;
 
         //This adds the "typing" effect
         public static void TypeLine(string line)

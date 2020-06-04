@@ -7,40 +7,66 @@ namespace CastleEscape
     {
         public static void Look()
         {
-            
+
             if (Player.PlayerLocation == 'S')
             {
-                //String SKeyword = MenuText.ChangeToRed("BED");
-               // Program.TypeLine($"You see the {SKeyword} you woke up on.");
                 SouthLook();
             }
             else if (Player.PlayerLocation == 'N')
             {
-                Program.TypeLine("You see a MIRROR.");
+                NorthLook();
             }
             else if (Player.PlayerLocation == 'E')
             {
-                Program.TypeLine("You see a WINDOW.");
+                EastLook();
             }
             else if (Player.PlayerLocation == 'W')
             {
-                Program.TypeLine("You see a DESK.");
+                WestLook();
             }
         }
 
         public static void SouthLook()
         {
-                Program.TypeLine("You see the ");
-                MenuText.ChangeToRed("BED", "Red");
-                Program.TypeLine(" you woke up on.\n");
+            Program.TypeLine("You see the ");
+            MenuText.ChangeTextColor("BED", "Red");
+            Program.TypeLine(" you woke up on.\n");
+        }
+        public static void NorthLook()
+        {
+            Program.TypeLine("You see an ancient, mysterious ");
+            MenuText.ChangeTextColor("MIRROR", "Red");
+            Program.TypeLine(" with runes etched across both sides.\n");
+        }
+        public static void EastLook()
+        {
+            Program.TypeLine("You see a modest wooden writing ");
+            MenuText.ChangeTextColor("DESK", "Red");
+            Program.TypeLine(", with an open ");
+            MenuText.ChangeTextColor("BOOK", "Red");
+            Program.TypeLine(" sitting on top.\n");
+        }
+        public static void WestLook()
+        {
+            Program.TypeLine("You see a small ");
+            MenuText.ChangeTextColor("WINDOW", "Red");
+            Program.TypeLine(" that is far too narrow to climb out of.\n");
         }
 
-            public static void UseItem(string useCommand)
+        public static void UseItem(string useCommand)
         {
             if (useCommand == "USE COMPASS")
-                {
-                    Program.TypeLine("There are four sides to this room. To the North, a MIRROR. To the East, a DESK. To the South, a BED. To the West, a WINDOW.");
-                }
+            {
+                Program.TypeLine("There are four sides to this room. \nTo the North, a ");
+                MenuText.ChangeTextColor("MIRROR", "Red");
+                Program.TypeLine(".\nTo the East, ");
+                MenuText.ChangeTextColor("DESK", "Red");
+                Program.TypeLine(".\nTo the South, a ");
+                MenuText.ChangeTextColor("BED", "Red");
+                Program.TypeLine(".\nTo the West, a ");
+                MenuText.ChangeTextColor("WINDOW", "Red");
+                Program.TypeLine(".\n");
+            }
             if (Player.PlayerLocation == 'S')
             {
                 if (useCommand == "USE KEY" && Player.CheckInventory("KEY"))
@@ -53,12 +79,16 @@ namespace CastleEscape
                 }
                 if (useCommand == "USE BED" && !Player.CheckInventory("KEY"))
                 {
-                    Program.TypeLine("You climb into the rough bed and notice something inside the pillow... A KEY? You put it in your bag.");
+                    Program.TypeLine("You climb into the rough bed and notice something inside the pillow... A ");
+                    MenuText.ChangeTextColor("KEY", "Red");
+                    Program.TypeLine("? You put it in your bag.\n");
                     Player.inventory.Add("KEY");
                 }
                 else if (useCommand == "USE BED" && Player.CheckInventory("KEY"))
                 {
-                    Program.TypeLine("You climb into the rough bed, and remember finding the KEY inside the pillow. There's nothing else to find here.");
+                    Program.TypeLine("You climb into the rough bed, and remember finding the ");
+                    MenuText.ChangeTextColor("KEY", "Red");
+                    Program.TypeLine(" inside the pillow. There's nothing else to find here.\n");
                 }
             }
             else if (Player.PlayerLocation == 'N')
@@ -77,9 +107,9 @@ namespace CastleEscape
 
 
 
-            public Location()
+        public Location()
         {
-                
+
         }
 
     }
