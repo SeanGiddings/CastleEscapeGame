@@ -6,14 +6,6 @@ namespace CastleEscape
     {
         public static void TitleCard()
         {
-            /*Console.WriteLine("You are about to begin");
-            System.Threading.Thread.Sleep(1000);
-            Console.WriteLine(".");
-            System.Threading.Thread.Sleep(1000);
-            Console.WriteLine(".");
-            System.Threading.Thread.Sleep(1000);
-            Console.WriteLine(".");
-            System.Threading.Thread.Sleep(1000);*/
             Console.WriteLine(" ▄████▄   ▄▄▄        ██████ ▄▄▄█████▓ ██▓    ▓█████    ▓█████   ██████ ▄████▄   ▄▄▄       ██▓███  ▓█████ ");
             Console.WriteLine("▒██▀ ▀█  ▒████▄    ▒██    ▒ ▓  ██▒ ▓▒▓██▒    ▓█   ▀    ▓█   ▀ ▒██    ▒▒██▀ ▀█  ▒████▄    ▓██░  ██▒▓█   ▀ ");
             Console.WriteLine("▒▓█    ▄ ▒██  ▀█▄  ░ ▓██▄   ▒ ▓██░ ▒░▒██░    ▒███      ▒███   ░ ▓██▄  ▒▓█    ▄ ▒██  ▀█▄  ▓██░ ██▓▒▒███   ");
@@ -25,7 +17,7 @@ namespace CastleEscape
             Console.WriteLine("░ ░            ░  ░      ░               ░  ░   ░  ░      ░  ░      ░ ░ ░            ░  ░            ░  ░");
             Console.WriteLine("░                                                                     ░                                  ");
 
-            Console.WriteLine("A Text Adventure Game By Sean Giddings");
+            Console.WriteLine("\n A Text Adventure Game By Sean Giddings");
             System.Threading.Thread.Sleep(2000);
             Program.TypeLine("\n \n \n Hit ENTER to begin");
             Console.ReadLine();

@@ -99,7 +99,6 @@ namespace CastleEscape
             }
             else if (playerCommand == "LOOK")
             {
-                //Program.TypeLine("You see the BED you woke up on.");
                 Location.Look();
             }
             else 
@@ -112,7 +111,6 @@ namespace CastleEscape
         {
             return inventory.Contains(itemName);
         }
-
 
     }
 }
