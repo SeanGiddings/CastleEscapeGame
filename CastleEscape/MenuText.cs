@@ -6,6 +6,7 @@ namespace CastleEscape
     {
         public static void TitleCard()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(" ▄████▄   ▄▄▄        ██████ ▄▄▄█████▓ ██▓    ▓█████    ▓█████   ██████ ▄████▄   ▄▄▄       ██▓███  ▓█████ ");
             Console.WriteLine("▒██▀ ▀█  ▒████▄    ▒██    ▒ ▓  ██▒ ▓▒▓██▒    ▓█   ▀    ▓█   ▀ ▒██    ▒▒██▀ ▀█  ▒████▄    ▓██░  ██▒▓█   ▀ ");
             Console.WriteLine("▒▓█    ▄ ▒██  ▀█▄  ░ ▓██▄   ▒ ▓██░ ▒░▒██░    ▒███      ▒███   ░ ▓██▄  ▒▓█    ▄ ▒██  ▀█▄  ▓██░ ██▓▒▒███   ");
@@ -16,7 +17,7 @@ namespace CastleEscape
             Console.WriteLine("░          ░   ▒   ░  ░  ░    ░        ░ ░      ░         ░   ░  ░  ░ ░          ░   ▒   ░░          ░   ");
             Console.WriteLine("░ ░            ░  ░      ░               ░  ░   ░  ░      ░  ░      ░ ░ ░            ░  ░            ░  ░");
             Console.WriteLine("░                                                                     ░                                  ");
-
+Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n A Text Adventure Game By Sean Giddings");
             System.Threading.Thread.Sleep(2000);
             Program.TypeLine("\n \n \n Hit ENTER to begin");
