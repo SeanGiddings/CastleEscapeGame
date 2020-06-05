@@ -37,7 +37,14 @@ Console.ForegroundColor = ConsoleColor.Blue;
         }
         public static void GameOver()
         {
-
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("   ____    _    __  __ _____    _____     _______ ____  ");
+            Console.WriteLine("  / ___|  / \\  |  \\/  | ____|  / _ \\ \\   / / ____|  _ \\ ");
+            Console.WriteLine(" | |  _  / _ \\ | |\\/| |  _|   | | | \\ \\ / /|  _| | |_) |");
+            Console.WriteLine(" | |_| |/ ___ \\| |  | | |___  | |_| |\\ V / | |___|  _ < ");
+            Console.WriteLine("  \\____/_/   \\_\\_|  |_|_____|  \\___/  \\_/  |_____|_| \\_\\");
+            Console.WriteLine("                                                        ");
+            Player.IsPlaying = false;
         }
 
 
