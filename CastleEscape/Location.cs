@@ -77,7 +77,7 @@ namespace CastleEscape
             }
             else if (Player.PlayerLocation == 'E')
             {
-                Program.TypeLine("You see a WINDOW.");
+                EastUseItem(useCommand);
             }
             else if (Player.PlayerLocation == 'W')
             {
@@ -133,6 +133,23 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
                     Program.TypeLine(" motioning to the Runes on either side. \nPerhaps if you could decipher them, you could learn more about the Man trapped in the mirror?");
                 }
+                else if (useCommand == "USE MAGIC BOOK" && Player.CheckInventory("MAGIC BOOK"))
+                {
+                    Program.TypeLine("You crack open the musty tome, and immediately the runes on the ");
+                    MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
+                    Program.TypeLine(" begin to ");
+                    MenuText.ChangeTextColor("glow", ConsoleColor.Cyan);
+                    Program.TypeLine(". \nThe ");
+                    MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
+                    Program.TypeLine(" in the ");
+                    MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
+                    Program.TypeLine(" begins to laugh. \nThere is a flash of light. When you open your eyes, everything around you is dark. \nBefore you, you see the ");
+                    MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
+                    Program.TypeLine(" standing in the tower you were trapped in. \nHe continues to laugh, silently, as he picks up a ");
+                    MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
+                    Program.TypeLine(" and throws it at you. \nYour view shatters, and everything goes black. \n GAME OVER");
+                    Player.IsPlaying = false;
+                }
                 else 
                 {
                     Program.TypeLine($"{useCommand} is not a proper command. Type ");
@@ -158,6 +175,65 @@ namespace CastleEscape
                     Program.TypeLine(" and gasp! \nThe tower you are in goes down into the clouds. You cannot see the ground below, and start to get the sinking feeling there might be ");
                     MenuText.ChangeTextColor("magic", ConsoleColor.Cyan);
                     Program.TypeLine(" at play here.");
+                }
+                else 
+                {
+                    Program.TypeLine($"{useCommand} is not a proper command. Type ");
+                    MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
+                    Program.TypeLine(" for assitance with the USE command.\n");
+                }  
+        }
+        public static void EastUseItem(string useCommand)
+        {
+                if (useCommand == "USE KEY" && Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You havent found a reason to use a key here.");
+                }
+                else if (useCommand == "USE KEY" && !Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You dont have a key");
+                }
+                else if (useCommand == "USE BOOK")
+                {
+                    Program.TypeLine("You look at the ");
+                    MenuText.ChangeTextColor("BOOK", ConsoleColor.Red);
+                    Program.TypeLine(" sitting on the ");
+                    MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
+                    Program.TypeLine(". \nMost of the text is unreadable to you--written in some sort of ancient script. \nAt the bottom of the page, you see these words scrawled in the common tongue:\n");
+                    MenuText.ChangeTextColor("\"The creature in the mirror is not to be trusted.\"", ConsoleColor.Cyan);
+                }
+                else if (useCommand == "USE DESK")
+                {
+                    Program.TypeLine("You sit at the ");
+                    MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
+                    Program.TypeLine(" and begin rifling through the drawers. \nYou dont find anything of use--spare parchment and some ink. \n But wait--reaching under the desk, you find a ");
+                    MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
+                    Program.TypeLine(". \nIt is locked.");
+                }
+                else if (useCommand == "USE SECRET COMPARTMENT" && Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You unlock the ");
+                    MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
+                    Program.TypeLine(" with a *click*. \nInside, you find a ");
+                    MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
+                    Program.TypeLine(". \nYou take it.");
+                    Player.inventory.Add("MAGIC BOOK");
+                }
+                else if (useCommand == "USE SECRET COMPARTMENT" && !Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You cannot open the ");
+                    MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
+                    Program.TypeLine(". \nPerhaps if you had a ");
+                    MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
+                    Program.TypeLine("?\n");
+                }
+                else if (useCommand == "USE MAGIC BOOK" && Player.CheckInventory("MAGIC BOOK"))
+                {
+                    Program.TypeLine("You crack open the musty tome, and immediately the runes on the ");
+                    MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
+                    Program.TypeLine(" begin to ");
+                    MenuText.ChangeTextColor("glow", ConsoleColor.Cyan);
+                    Program.TypeLine(". \nYou shut the book again. Perhaps if you were closer to the mirror?\n");
                 }
                 else 
                 {

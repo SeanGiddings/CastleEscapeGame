@@ -14,7 +14,7 @@ namespace CastleEscape
         public static event PlayerLocationEvents wentWest;
         public static event PlayerLocationEvents wentEast;
 
-        public bool IsPlaying = false;
+        public static bool IsPlaying = false;
         public static List<string> inventory = new List<string>();
 
         public Player()
