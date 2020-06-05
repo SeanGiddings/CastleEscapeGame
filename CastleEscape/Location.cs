@@ -50,7 +50,9 @@ namespace CastleEscape
         {
             Program.TypeLine("You see a small ");
             MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-            Program.TypeLine(" that is far too narrow to climb out of.\n");
+            Program.TypeLine(" that is far too narrow to climb out of.\n Below the open window is some broken glass, and a handful of small ");
+            MenuText.ChangeTextColor("STONES", ConsoleColor.Red);
+            Program.TypeLine(".\n");
         }
 
         public static void UseItem(string useCommand)
@@ -150,6 +152,19 @@ namespace CastleEscape
                     Program.TypeLine(" and throws it at you. \nYour view shatters, and everything goes black. \n GAME OVER");
                     Player.IsPlaying = false;
                 }
+                else if (useCommand == "USE STONES" || useCommand == "USE STONE" && Player.CheckInventory("STONE"))
+                {
+                    Program.TypeLine("You pull the stone out of your pocket and look at the ");
+                    MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
+                    Program.TypeLine(" in the ");
+                    MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
+                    Program.TypeLine(". \nHis eyes dart from you, to your hand. \nWhen he sees the ");
+                    MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
+                    Program.TypeLine(", he becomes enraged. \nYou throw the stone as hard as you can at the mirror. \nThere is a huge flash of light. And then--\nWhere the ");
+                    MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
+                    Program.TypeLine(" stood, there is now a doorway, with a spiral staircase that descends into darkness. \nYou take a deep breath and begin your descent.\n");
+                    MenuText.YouWin();
+                }
                 else 
                 {
                     Program.TypeLine($"{useCommand} is not a proper command. Type ");
@@ -175,6 +190,23 @@ namespace CastleEscape
                     Program.TypeLine(" and gasp! \nThe tower you are in goes down into the clouds. You cannot see the ground below, and start to get the sinking feeling there might be ");
                     MenuText.ChangeTextColor("magic", ConsoleColor.Cyan);
                     Program.TypeLine(" at play here.");
+                }
+                else if (useCommand == "USE STONES" || useCommand == "USE STONE" && !Player.CheckInventory("STONE"))
+                {
+                    Program.TypeLine("You examine the broken glass at your feet. Someone seems to have used a ");
+                    MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
+                    Program.TypeLine(" to break the ");
+                    MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
+                    Program.TypeLine(". \nYou have no idea why you might need it, but you pick up a ");
+                    MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
+                    Program.TypeLine(" and put it in your pocket.\n");
+                    Player.inventory.Add("STONE");
+                }
+                else if (useCommand == "USE STONES" || useCommand == "USE STONE" && Player.CheckInventory("STONE"))
+                {
+                    Program.TypeLine("You have already picked up a ");
+                    MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
+                    Program.TypeLine(" from the broken glass at your feet. \nYou decide you don't need a second one. \n");
                 }
                 else 
                 {

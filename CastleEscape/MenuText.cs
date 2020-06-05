@@ -24,6 +24,22 @@ Console.ForegroundColor = ConsoleColor.Blue;
             Console.ReadLine();
         }
 
+        public static void YouWin()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(" __   __            _____                              _ _ ");
+            Console.WriteLine(" \\ \\ / /__  _   _  | ____|___  ___ __ _ _ __   ___  __| | |");
+            Console.WriteLine("  \\ V / _ \\| | | | |  _| / __|/ __/ _` | '_ \\ / _ \\/ _` | |");
+            Console.WriteLine("   | | (_) | |_| | | |___\\__ \\ (_| (_| | |_) |  __/ (_| |_|");
+            Console.WriteLine("   |_|\\___/ \\__,_| |_____|___/\\___\\__,_| .__/ \\___|\\__,_(_)");
+            Console.WriteLine("                                       |_|                 ");
+            Player.IsPlaying = false;
+        }
+        public static void GameOver()
+        {
+
+        }
+
 
         public static void OpeningText()
         {
