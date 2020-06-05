@@ -64,10 +64,10 @@ Console.ForegroundColor = ConsoleColor.Blue;
             Console.ForegroundColor = ConsoleColor.Blue;
         }
 
-        public static void ChangeTextColor(string keyword, string newColor)
+        public static void ChangeTextColor(string keyword, ConsoleColor newColor)
         {
 
-            ConsoleColor consoleColor = ConsoleColor.White;
+            /*ConsoleColor consoleColor = ConsoleColor.White;
             try
             {
                 consoleColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), newColor, true);
@@ -77,8 +77,8 @@ Console.ForegroundColor = ConsoleColor.Blue;
                 //Invalid color
             }
 
-            Console.ForegroundColor = consoleColor;
-            //Console.ForegroundColor = ConsoleColor.newColor;
+            Console.ForegroundColor = consoleColor;*/
+            Console.ForegroundColor = newColor;
             Program.TypeLine(keyword);
             Console.ForegroundColor = ConsoleColor.Blue;
         }
