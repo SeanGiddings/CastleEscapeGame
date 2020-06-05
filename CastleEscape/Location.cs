@@ -34,7 +34,8 @@ namespace CastleEscape
         }
         public static void NorthLook()
         {
-            Program.TypeLine("You see an ancient, mysterious ");
+            Player.DrawPicture();
+            Program.TypeLine("You see an ancient, mysterious "); 
             MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
             Program.TypeLine(" with runes etched across both sides.\n");
         }
@@ -91,7 +92,7 @@ namespace CastleEscape
         {
                 if (useCommand == "USE KEY" && Player.CheckInventory("KEY"))
                 {
-                    Program.TypeLine("You are south and you have a key and you used a key");
+                    Program.TypeLine("You havent found a reason to use a key here.");
                 }
                 else if (useCommand == "USE KEY" && !Player.CheckInventory("KEY"))
                 {
@@ -217,15 +218,7 @@ namespace CastleEscape
         }
         public static void EastUseItem(string useCommand)
         {
-                if (useCommand == "USE KEY" && Player.CheckInventory("KEY"))
-                {
-                    Program.TypeLine("You havent found a reason to use a key here.");
-                }
-                else if (useCommand == "USE KEY" && !Player.CheckInventory("KEY"))
-                {
-                    Program.TypeLine("You dont have a key");
-                }
-                else if (useCommand == "USE BOOK")
+                if (useCommand == "USE BOOK")
                 {
                     Program.TypeLine("You look at the ");
                     MenuText.ChangeTextColor("BOOK", ConsoleColor.Red);
@@ -242,7 +235,7 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
                     Program.TypeLine(". \nIt is locked.");
                 }
-                else if (useCommand == "USE SECRET COMPARTMENT" && Player.CheckInventory("KEY"))
+                else if ((useCommand == "USE SECRET COMPARTMENT" && Player.CheckInventory("KEY") && !Player.CheckInventory("MAGIC BOOK")) || (useCommand == "USE KEY" && Player.CheckInventory("KEY") && !Player.CheckInventory("MAGIC BOOK")))
                 {
                     Program.TypeLine("You unlock the ");
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
@@ -258,6 +251,14 @@ namespace CastleEscape
                     Program.TypeLine(". \nPerhaps if you had a ");
                     MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
                     Program.TypeLine("?\n");
+                }
+                else if (useCommand == "USE SECRET COMPARTMENT" && Player.CheckInventory("KEY") && Player.CheckInventory("MAGIC BOOK"))
+                {
+                    Program.TypeLine("You have already found the ");
+                    MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
+                    Program.TypeLine(" inside the ");
+                    MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
+                    Program.TypeLine(". \nThere is nothing else to find here.");
                 }
                 else if (useCommand == "USE MAGIC BOOK" && Player.CheckInventory("MAGIC BOOK"))
                 {

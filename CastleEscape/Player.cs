@@ -29,29 +29,44 @@ namespace CastleEscape
             }
         }
 
+        public static void DrawPicture() //string ImagePath
+        {
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\seangiddings\Documents\Guides and Docs\github\TestConsoleApp\CastleEscape\Images\North.txt");
+
+            // Display the file contents by using a foreach loop.
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
 
         public void CheckPlayerLocation()
         {
             if (PlayerLocation == 'S')
             {
+                Console.Clear();
                 Console.WriteLine($"You are South");
             }
             else if (PlayerLocation == 'N')
             {
+                Console.Clear();
                 Console.WriteLine($"You are North");
             }
             else if (PlayerLocation == 'E')
             {
+                Console.Clear();
                 Console.WriteLine($"You are East");
             }
             else if (PlayerLocation == 'W')
             {
+                Console.Clear();
                 Console.WriteLine($"You are West");
             }
         }
 
         public void PlayerCommand()
-        {   
+        {
             Console.ForegroundColor = ConsoleColor.White;
             string input = Console.ReadLine();
             string playerCommand = input.ToUpper();
@@ -103,7 +118,7 @@ namespace CastleEscape
             {
                 Location.UseItem(playerCommand);
             }
-            else 
+            else
             {
                 Console.WriteLine($"\"{playerCommand}\" is not a proper command. Please type \"HELP\" for all available commands");
             }
