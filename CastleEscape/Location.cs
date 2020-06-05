@@ -69,6 +69,24 @@ namespace CastleEscape
             }
             if (Player.PlayerLocation == 'S')
             {
+                SouthUseItem(useCommand);
+            }
+            else if (Player.PlayerLocation == 'N')
+            {
+                NorthUseItem(useCommand);
+            }
+            else if (Player.PlayerLocation == 'E')
+            {
+                Program.TypeLine("You see a WINDOW.");
+            }
+            else if (Player.PlayerLocation == 'W')
+            {
+                WestUseItem(useCommand);
+            }
+        }
+
+        public static void SouthUseItem(string useCommand)
+        {
                 if (useCommand == "USE KEY" && Player.CheckInventory("KEY"))
                 {
                     Program.TypeLine("You are south and you have a key and you used a key");
@@ -77,7 +95,7 @@ namespace CastleEscape
                 {
                     Program.TypeLine("You dont have a key");
                 }
-                if (useCommand == "USE BED" && !Player.CheckInventory("KEY"))
+                else if (useCommand == "USE BED" && !Player.CheckInventory("KEY"))
                 {
                     Program.TypeLine("You climb into the rough bed and notice something inside the pillow... A ");
                     MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
@@ -89,20 +107,64 @@ namespace CastleEscape
                     Program.TypeLine("You climb into the rough bed, and remember finding the ");
                     MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
                     Program.TypeLine(" inside the pillow. There's nothing else to find here.\n");
+                }  
+                else 
+                {
+                    Program.TypeLine($"{useCommand} is not a proper command. Type ");
+                    MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
+                    Program.TypeLine(" for assitance with the USE command.\n");
+                }  
+        }
+        public static void NorthUseItem(string useCommand)
+        {
+                if (useCommand == "USE KEY" && Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You havent found a reason to use a key here.");
                 }
-            }
-            else if (Player.PlayerLocation == 'N')
-            {
-                Program.TypeLine("You see a MIRROR.");
-            }
-            else if (Player.PlayerLocation == 'E')
-            {
-                Program.TypeLine("You see a WINDOW.");
-            }
-            else if (Player.PlayerLocation == 'W')
-            {
-                Program.TypeLine("You see a DESK.");
-            }
+                else if (useCommand == "USE KEY" && !Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You dont have a key");
+                }
+                else if (useCommand == "USE MIRROR")
+                {
+                    Program.TypeLine("You look at the ");
+                    MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
+                    Program.TypeLine(" and instead of seeing your reflection, you see a ");
+                    MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
+                    Program.TypeLine(" motioning to the Runes on either side. \nPerhaps if you could decipher them, you could learn more about the Man trapped in the mirror?");
+                }
+                else 
+                {
+                    Program.TypeLine($"{useCommand} is not a proper command. Type ");
+                    MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
+                    Program.TypeLine(" for assitance with the USE command.\n");
+                }  
+        }
+
+        public static void WestUseItem(string useCommand)
+        {
+                if (useCommand == "USE KEY" && Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You havent found a reason to use a key here.");
+                }
+                else if (useCommand == "USE KEY" && !Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You dont have a key");
+                }
+                else if (useCommand == "USE WINDOW")
+                {
+                    Program.TypeLine("You look out the small ");
+                    MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
+                    Program.TypeLine(" and gasp! \nThe tower you are in goes down into the clouds. You cannot see the ground below, and start to get the sinking feeling there might be ");
+                    MenuText.ChangeTextColor("magic", ConsoleColor.Cyan);
+                    Program.TypeLine(" at play here.");
+                }
+                else 
+                {
+                    Program.TypeLine($"{useCommand} is not a proper command. Type ");
+                    MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
+                    Program.TypeLine(" for assitance with the USE command.\n");
+                }  
         }
 
 
