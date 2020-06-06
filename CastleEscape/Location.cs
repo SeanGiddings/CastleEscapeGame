@@ -34,7 +34,7 @@ namespace CastleEscape
         }
         public static void NorthLook()
         {
-            Player.DrawPicture();
+            //Player.DrawPicture();
             Program.TypeLine("You see an ancient, mysterious "); 
             MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
             Program.TypeLine(" with runes etched across both sides.\n");
@@ -44,7 +44,7 @@ namespace CastleEscape
             Program.TypeLine("You see a modest wooden writing ");
             MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
             Program.TypeLine(", with an open ");
-            MenuText.ChangeTextColor("BOOK", ConsoleColor.Red);
+            MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
             Program.TypeLine(" sitting on top.\n");
         }
         public static void WestLook()
@@ -218,10 +218,10 @@ namespace CastleEscape
         }
         public static void EastUseItem(string useCommand)
         {
-                if (useCommand == "USE BOOK")
+                if (useCommand == "USE JOURNAL")
                 {
                     Program.TypeLine("You look at the ");
-                    MenuText.ChangeTextColor("BOOK", ConsoleColor.Red);
+                    MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
                     Program.TypeLine(" sitting on the ");
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
                     Program.TypeLine(". \nMost of the text is unreadable to you--written in some sort of ancient script. \nAt the bottom of the page, you see these words scrawled in the common tongue:\n");
