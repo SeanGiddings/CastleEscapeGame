@@ -34,7 +34,7 @@ namespace CastleEscape
         }
         public static void NorthLook()
         {
-            //Player.DrawPicture();
+            Player.DrawPicture();
             Program.TypeLine("You see an ancient, mysterious "); 
             MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
             Program.TypeLine(" with runes etched across both sides.\n");
@@ -150,7 +150,8 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
                     Program.TypeLine(" standing in the tower you were trapped in. \nHe continues to laugh, silently, as he picks up a ");
                     MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                    Program.TypeLine(" and throws it at you. \nYour view shatters, and everything goes black. \n GAME OVER");
+                    Program.TypeLine(" and throws it at you. \nYour view shatters, and everything goes black.\n");
+                    MenuText.GameOver();
                     Player.IsPlaying = false;
                 }
                 else if (useCommand == "USE STONES" || useCommand == "USE STONE" && Player.CheckInventory("STONE"))

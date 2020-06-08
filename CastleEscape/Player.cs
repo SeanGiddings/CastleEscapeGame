@@ -31,7 +31,7 @@ namespace CastleEscape
 
         public static void DrawPicture() //string ImagePath
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\seangiddings\Documents\Guides and Docs\github\TestConsoleApp\CastleEscape\Images\North.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Sean\github\CastleEscape\CastleEscape\Images\North.txt");
 
             // Display the file contents by using a foreach loop.
             foreach (string line in lines)
