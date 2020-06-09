@@ -56,15 +56,15 @@ namespace CastleEscape
             Program.TypeLine(".\n");
         }
 
-        public static void UseItem(string useCommand)
+        /*public static void UseItem(string useCommand)
         {
             if (Player.PlayerLocation == 'S')
             {
-                SouthUseItem(useCommand);
+                UseItemCommand(useCommand);
             }
             else if (Player.PlayerLocation == 'N')
             {
-                NorthUseItem(useCommand);
+                UseItemCommand(useCommand);
             }
             else if (Player.PlayerLocation == 'E')
             {
@@ -73,6 +73,22 @@ namespace CastleEscape
             else if (Player.PlayerLocation == 'W')
             {
                 WestUseItem(useCommand);
+            }
+        }*/
+
+        public static void UseItemCommand(string useCommand)
+        {
+            if (useCommand == "USE MIRROR")
+            {
+                UseMirror();
+            }
+            if (useCommand == "USE KEY")
+            {
+                UseKey(useCommand);
+            }
+            if (useCommand == "USE BED")
+            {
+                UseBed(useCommand);
             }
         }
 
@@ -329,10 +345,55 @@ namespace CastleEscape
                 MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                 Program.TypeLine(" to use it.\n");
             }
-
         }
 
+        public static void UseKey(string useCommand)
+        {
+            if (!Player.CheckInventory("KEY"))
+            {
+                Program.TypeLine("You dont have a key");
+            }
+            else if (Player.CheckInventory("KEY") && !(Player.PlayerLocation == 'E'))
+            {
+                Program.TypeLine("There is no reason to use a key here");
+            }
+            else if (Player.PlayerLocation == 'E' && (useCommand == "USE KEY" && Player.CheckInventory("KEY") && !Player.CheckInventory("MAGIC BOOK")))
+            {
+                Program.TypeLine("You unlock the ");
+                MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
+                Program.TypeLine(" with a *click*. \nInside, you find a ");
+                MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
+                Program.TypeLine(". \nYou take it.");
+                Player.inventory.Add("MAGIC BOOK");
+            }
 
+        }
+        public static void UseBed(string useCommand)
+        {
+            if (Player.PlayerLocation == 'S')
+            {
+                if (useCommand == "USE BED" && !Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You climb into the rough bed and notice something inside the pillow... A ");
+                    MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
+                    Program.TypeLine("? You put it in your bag.\n");
+                    Player.inventory.Add("KEY");
+                }
+                else if (useCommand == "USE BED" && Player.CheckInventory("KEY"))
+                {
+                    Program.TypeLine("You climb into the rough bed, and remember finding the ");
+                    MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
+                    Program.TypeLine(" inside the pillow. There's nothing else to find here.\n");
+                }
+            }
+            else
+            {
+                Program.TypeLine("You are not close enough to the ");
+                MenuText.ChangeTextColor("BED", ConsoleColor.Red);
+                Program.TypeLine(" to use it.\n");
+            }
+
+        }
 
         public Location()
         {

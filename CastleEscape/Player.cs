@@ -116,7 +116,7 @@ namespace CastleEscape
             }
             else if (playerCommand.Contains("USE") == true)
             {
-                Location.UseItem(playerCommand);
+                Location.UseItemCommand(playerCommand);
             }
             else
             {
