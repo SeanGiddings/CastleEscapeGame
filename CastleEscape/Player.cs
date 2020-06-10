@@ -21,7 +21,6 @@ namespace CastleEscape
         {
             IsPlaying = true;
             inventory.Add("COMPASS");
-            Location.usableItems.Add("COMPASS");
 
             //This while loop ensures the game always reverts back to the player command prompt)
             while (IsPlaying)
@@ -105,6 +104,12 @@ namespace CastleEscape
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("Your bag contains:");
                 inventory.ForEach(Console.WriteLine);
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            else if (playerCommand == "LIST")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Location.usableItems.ForEach(Console.WriteLine);
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
             else if (playerCommand == "HELP")

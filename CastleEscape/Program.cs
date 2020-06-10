@@ -39,6 +39,7 @@ namespace CastleEscape
             }
             
             TypeLine("Where would you like to go?");
+            Location location = new Location();
             Player player = new Player();
         }
     }

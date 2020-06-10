@@ -7,6 +7,22 @@ namespace CastleEscape
     {
 
         public static List<string> usableItems = new List<string>();
+
+
+        public Location()
+        {
+            usableItems.Add("USE MIRROR");
+            usableItems.Add("USE KEY");
+            usableItems.Add("USE BED");
+            usableItems.Add("USE COMPASS");
+            usableItems.Add("USE WINDOW");
+            usableItems.Add("USE STONE");
+            usableItems.Add("USE STONES");
+            usableItems.Add("USE DESK");
+            usableItems.Add("USE JOURNAL");
+            usableItems.Add("USE MAGIC BOOK");
+            usableItems.Add("USE SECRET COMPARTMENT");
+        }
         public static void Look()
         {
 
@@ -60,23 +76,24 @@ namespace CastleEscape
 
         public static void UseItemCommand(string useCommand)
         {
-            if (usableItems.Contains(useCommand)) {
-            UseMirror(useCommand);
-            UseKey(useCommand);
-            UseBed(useCommand);
-            UseCompass(useCommand);
-            UseWindow(useCommand);
-            UseStone(useCommand);
-            UseDesk(useCommand);
-            UseJournal(useCommand);
-            UseMagicBook(useCommand);
-            UseSecretCompartment(useCommand);
+            if (usableItems.Contains(useCommand))
+            {
+                UseMirror(useCommand);
+                UseKey(useCommand);
+                UseBed(useCommand);
+                UseCompass(useCommand);
+                UseWindow(useCommand);
+                UseStone(useCommand);
+                UseDesk(useCommand);
+                UseJournal(useCommand);
+                UseMagicBook(useCommand);
+                UseSecretCompartment(useCommand);
             }
-            /*
+            else {
             Program.TypeLine($"{useCommand} is not a proper command. Type ");
             MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
             Program.TypeLine(" for assitance with the USE command.\n");
-            */
+            }
         }
 
         public static void UseMirror(string useCommand)
@@ -106,7 +123,9 @@ namespace CastleEscape
             {
                 if (!Player.CheckInventory("KEY"))
                 {
-                    Program.TypeLine("You dont have a key");
+                    Program.TypeLine("You dont have a ");
+                    MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
+                    Program.TypeLine(".\n");
                 }
                 else if (Player.CheckInventory("KEY") && !(Player.PlayerLocation == 'E'))
                 {
@@ -122,8 +141,8 @@ namespace CastleEscape
                     Player.inventory.Add("MAGIC BOOK");
                 }
             }
-
         }
+
         public static void UseBed(string useCommand)
         {
             if (useCommand == "USE BED")
@@ -151,8 +170,8 @@ namespace CastleEscape
                     Program.TypeLine(" to use it.\n");
                 }
             }
-
         }
+
         public static void UseCompass(string useCommand)
         {
             static void CompassText()
@@ -169,7 +188,6 @@ namespace CastleEscape
                 }
             }
             if (useCommand == "USE COMPASS")
-
             {
                 if (Player.PlayerLocation == 'S')
                 {
@@ -253,6 +271,12 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                         Program.TypeLine(" stood, there is now a doorway, with a spiral staircase that descends into darkness. \nYou take a deep breath and begin your descent.\n");
                         MenuText.YouWin();
+                    }
+                    else 
+                    {
+                        Program.TypeLine("You don't have a ");
+                        MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
+                        Program.TypeLine(". \n");
                     }
                 }
                 else
@@ -400,10 +424,7 @@ namespace CastleEscape
             }
         }
 
-        public Location()
-        {
 
-        }
 
     }
 }
