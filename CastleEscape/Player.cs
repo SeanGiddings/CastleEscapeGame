@@ -21,6 +21,7 @@ namespace CastleEscape
         {
             IsPlaying = true;
             inventory.Add("COMPASS");
+            Location.usableItems.Add("COMPASS");
 
             //This while loop ensures the game always reverts back to the player command prompt)
             while (IsPlaying)

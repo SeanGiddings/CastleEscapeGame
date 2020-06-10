@@ -5,6 +5,8 @@ namespace CastleEscape
 {
     class Location
     {
+
+        public static List<string> usableItems = new List<string>();
         public static void Look()
         {
 
@@ -58,6 +60,7 @@ namespace CastleEscape
 
         public static void UseItemCommand(string useCommand)
         {
+            if (usableItems.Contains(useCommand)) {
             UseMirror(useCommand);
             UseKey(useCommand);
             UseBed(useCommand);
@@ -68,6 +71,7 @@ namespace CastleEscape
             UseJournal(useCommand);
             UseMagicBook(useCommand);
             UseSecretCompartment(useCommand);
+            }
             /*
             Program.TypeLine($"{useCommand} is not a proper command. Type ");
             MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
