@@ -5,9 +5,6 @@ namespace CastleEscape
 {
     class Program
     {
-        
-        
-
         //This adds the "typing" effect
         public static void TypeLine(string line)
         {
@@ -21,11 +18,6 @@ namespace CastleEscape
                 }
             }
         }
-
-        private static void InventoryCheck(List<string> currentInventory) {
-            currentInventory.ForEach(Console.WriteLine);
-        }
-
 
         static void Main(string[] args)
         {
