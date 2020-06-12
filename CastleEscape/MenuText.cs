@@ -33,7 +33,7 @@ Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("   | | (_) | |_| | | |___\\__ \\ (_| (_| | |_) |  __/ (_| |_|");
             Console.WriteLine("   |_|\\___/ \\__,_| |_____|___/\\___\\__,_| .__/ \\___|\\__,_(_)");
             Console.WriteLine("                                       |_|                 ");
-            Player.IsPlaying = false;
+            PlayAgain();
         }
         public static void GameOver()
         {
@@ -44,9 +44,30 @@ Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(" | |_| |/ ___ \\| |  | | |___  | |_| |\\ V / | |___|  _ < ");
             Console.WriteLine("  \\____/_/   \\_\\_|  |_|_____|  \\___/  \\_/  |_____|_| \\_\\");
             Console.WriteLine("                                                        ");
-            Player.IsPlaying = false;
+            PlayAgain();
         }
 
+        public static void PlayAgain()
+        {
+            Program.TypeLine("\nWould You like to play again?");
+            Console.ForegroundColor = ConsoleColor.White;
+            string input = Console.ReadLine();
+            string playerCommand = input.ToUpper();
+            Console.ForegroundColor = ConsoleColor.Red;
+            if (playerCommand == "YES" || playerCommand == "Y")
+            {
+                Game game = new Game();
+            }
+            else if (playerCommand == "NO" || playerCommand == "N")
+            {
+                Player.IsPlaying = false;
+            }
+            else 
+            {
+                Console.WriteLine($"\"{playerCommand}\" is not a proper command. Please type YES or NO.");
+                PlayAgain();
+            }
+        }
 
         public static void OpeningText()
         {

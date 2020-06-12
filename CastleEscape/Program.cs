@@ -5,8 +5,8 @@ namespace CastleEscape
 {
     class Program
     {
-        //Debug = true will turn off the opening text scroll for quick debugging
-        private static bool Debug = true;
+        
+        
 
         //This adds the "typing" effect
         public static void TypeLine(string line)
@@ -29,18 +29,7 @@ namespace CastleEscape
 
         static void Main(string[] args)
         {
-            Player.wentSouth += InventoryCheck;
-
-            Console.ForegroundColor = ConsoleColor.Blue;
-            if (Debug == false) 
-            {
-                MenuText.TitleCard();
-                MenuText.OpeningText();
-            }
-            
-            TypeLine("Where would you like to go?");
-            Location location = new Location();
-            Player player = new Player();
+            Game game = new Game();
         }
     }
 }

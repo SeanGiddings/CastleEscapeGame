@@ -5,8 +5,8 @@ namespace CastleEscape
 {
     class Player
     {
-        //Player always starts to the South of the room.
-        public static char PlayerLocation = 'S';
+        
+        public static char PlayerLocation;
 
         public delegate void PlayerLocationEvents(List<string> currentInventory);
         public static event PlayerLocationEvents wentNorth;
@@ -20,6 +20,9 @@ namespace CastleEscape
         public Player()
         {
             IsPlaying = true;
+            //Player always starts to the South of the room.
+            PlayerLocation = 'S';
+            inventory.Clear();
             inventory.Add("COMPASS");
 
             //This while loop ensures the game always reverts back to the player command prompt)

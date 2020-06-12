@@ -23,55 +23,56 @@ namespace CastleEscape
             usableItems.Add("USE MAGIC BOOK");
             usableItems.Add("USE SECRET COMPARTMENT");
         }
+
+
         public static void Look()
         {
-
-            if (Player.PlayerLocation == 'S')
-            {
-                SouthLook();
-            }
-            else if (Player.PlayerLocation == 'N')
-            {
-                NorthLook();
-            }
-            else if (Player.PlayerLocation == 'E')
-            {
-                EastLook();
-            }
-            else if (Player.PlayerLocation == 'W')
-            {
-                WestLook();
-            }
+            SouthLook();
+            NorthLook();
+            EastLook();
+            WestLook();
         }
 
         public static void SouthLook()
         {
-            Program.TypeLine("You see the ");
-            MenuText.ChangeTextColor("BED", ConsoleColor.Red);
-            Program.TypeLine(" you woke up on.\n");
+            if (Player.PlayerLocation == 'S')
+            {
+                Program.TypeLine("You see the ");
+                MenuText.ChangeTextColor("BED", ConsoleColor.Red);
+                Program.TypeLine(" you woke up on.\n");
+            }
         }
         public static void NorthLook()
         {
-            //Player.DrawPicture();
-            Program.TypeLine("You see an ancient, mysterious ");
-            MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-            Program.TypeLine(" with runes etched across both sides.\n");
+            if (Player.PlayerLocation == 'N')
+            {
+                //Player.DrawPicture();
+                Program.TypeLine("You see an ancient, mysterious ");
+                MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
+                Program.TypeLine(" with runes etched across both sides.\n");
+            }
         }
         public static void EastLook()
         {
-            Program.TypeLine("You see a modest wooden writing ");
-            MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-            Program.TypeLine(", with an open ");
-            MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
-            Program.TypeLine(" sitting on top.\n");
+            if (Player.PlayerLocation == 'E')
+            {
+                Program.TypeLine("You see a modest wooden writing ");
+                MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
+                Program.TypeLine(", with an open ");
+                MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
+                Program.TypeLine(" sitting on top.\n");
+            }
         }
         public static void WestLook()
         {
-            Program.TypeLine("You see a small ");
-            MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-            Program.TypeLine(" that is far too narrow to climb out of.\n Below the open window is some broken glass, and a handful of small ");
-            MenuText.ChangeTextColor("STONES", ConsoleColor.Red);
-            Program.TypeLine(".\n");
+            if (Player.PlayerLocation == 'W')
+            {
+                Program.TypeLine("You see a small ");
+                MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
+                Program.TypeLine(" that is far too narrow to climb out of.\n Below the open window is some broken glass, and a handful of small ");
+                MenuText.ChangeTextColor("STONES", ConsoleColor.Red);
+                Program.TypeLine(".\n");
+            }
         }
 
         public static void UseItemCommand(string useCommand)
@@ -89,10 +90,11 @@ namespace CastleEscape
                 UseMagicBook(useCommand);
                 UseSecretCompartment(useCommand);
             }
-            else {
-            Program.TypeLine($"{useCommand} is not a proper command. Type ");
-            MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
-            Program.TypeLine(" for assitance with the USE command.\n");
+            else
+            {
+                Program.TypeLine($"{useCommand} is not a proper command. Type ");
+                MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
+                Program.TypeLine(" for assitance with the USE command.\n");
             }
         }
 
@@ -272,7 +274,7 @@ namespace CastleEscape
                         Program.TypeLine(" stood, there is now a doorway, with a spiral staircase that descends into darkness. \nYou take a deep breath and begin your descent.\n");
                         MenuText.YouWin();
                     }
-                    else 
+                    else
                     {
                         Program.TypeLine("You don't have a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
