@@ -4,6 +4,8 @@ namespace CastleEscape
 {
     class MenuText
     {
+        string[] usableWords = { "KEY", "BED", "MIRROR", "COMPASS", "WINDOW", "STONE", "STONES", "DESK", "JOURNAL", "MAGIC BOOK", "SECRET COMPARTMENT" };
+
         public static void TitleCard()
         {
             Console.ForegroundColor = ConsoleColor.Red;
