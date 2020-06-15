@@ -269,10 +269,8 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                         Program.TypeLine(". \nHis eyes dart from you, to your hand. \nWhen he sees the ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(", he becomes enraged. \nYou throw the stone as hard as you can at the mirror. \nThere is a huge flash of light. And then--\nWhere the ");
-                        MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        Program.TypeLine(" stood, there is now a doorway, with a spiral staircase that descends into darkness. \nYou take a deep breath and begin your descent.\n");
-                        MenuText.YouWin();
+                        Program.TypeLine(", he becomes enraged. \nAre you sure you want to throw the stone at the mirror?");
+                        MenuText.StoneFinalChoice();
                     }
                     else
                     {
@@ -357,13 +355,8 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
                         Program.TypeLine(" in the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        Program.TypeLine(" begins to laugh. \nThere is a flash of light. When you open your eyes, everything around you is dark. \nBefore you, you see the ");
-                        MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
-                        Program.TypeLine(" standing in the tower you were trapped in. \nHe continues to laugh, silently, as he picks up a ");
-                        MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(" and throws it at you. \nYour view shatters, and everything goes black.\n");
-                        MenuText.GameOver();
-                        Player.IsPlaying = false;
+                        Program.TypeLine(" begins to laugh.\n \n \nWould you like to keep reading?");
+                        MenuText.BookFinalChoice();
                     }
                     else
                     {

@@ -6,7 +6,7 @@ namespace CastleEscape
     class Game
     {
         //Debug = true will turn off the opening text scroll for quick debugging
-        private static bool Debug = true;
+        private static bool Debug = false;
         /*
                 private static void InventoryCheck(List<string> currentInventory)
                 {
@@ -16,7 +16,7 @@ namespace CastleEscape
         public Game()
         {
             //Player.wentSouth += InventoryCheck;
-
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
             if (Debug == false)
             {
@@ -24,7 +24,7 @@ namespace CastleEscape
                 MenuText.OpeningText();
             }
 
-            Program.TypeLine("Where would you like to go?");
+            Program.TypeLine("What would you like to do?\n");
             Location location = new Location();
             Player player = new Player();
         }
