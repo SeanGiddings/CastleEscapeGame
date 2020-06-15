@@ -22,13 +22,16 @@ namespace CastleEscape
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n A Text Adventure Game By Sean Giddings");
             System.Threading.Thread.Sleep(2000);
+            Program.TypeLine("\n \n \n");
+            MenuText.HelpMenu();
             Program.TypeLine("\n \n \n Hit ENTER to begin");
             Console.ReadLine();
         }
 
         public static void OpeningText()
         {
-            int textDelay = 0;
+            int textDelay = 500;
+            Console.Clear();
             Program.TypeLine("\n \n \nYou wake up, with a start! \n");
             System.Threading.Thread.Sleep(textDelay);
             Program.TypeLine("You are laying on a small, hard ");
@@ -156,7 +159,7 @@ namespace CastleEscape
             }
             else if (playerCommand == "NO" || playerCommand == "N")
             {
-                Program.TypeLine(". \nYou put the ");
+                Program.TypeLine("\nYou put the ");
                 MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
                 Program.TypeLine(" back into your pocket and step away from the ");
                 MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);

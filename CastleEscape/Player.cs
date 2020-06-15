@@ -49,22 +49,22 @@ namespace CastleEscape
             if (PlayerLocation == 'S')
             {
                 Console.Clear();
-                Console.WriteLine($"You are South");
+                Console.WriteLine($"You moved South");
             }
             else if (PlayerLocation == 'N')
             {
                 Console.Clear();
-                Console.WriteLine($"You are North");
+                Console.WriteLine($"You moved North");
             }
             else if (PlayerLocation == 'E')
             {
                 Console.Clear();
-                Console.WriteLine($"You are East");
+                Console.WriteLine($"You moved East");
             }
             else if (PlayerLocation == 'W')
             {
                 Console.Clear();
-                Console.WriteLine($"You are West");
+                Console.WriteLine($"You moved West");
             }
         }
 
@@ -107,12 +107,6 @@ namespace CastleEscape
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.WriteLine("Your bag contains:");
                 inventory.ForEach(Console.WriteLine);
-                Console.ForegroundColor = ConsoleColor.Blue;
-            }
-            else if (playerCommand == "LIST")
-            {
-                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Location.usableItems.ForEach(Console.WriteLine);
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
             else if (playerCommand == "HELP")

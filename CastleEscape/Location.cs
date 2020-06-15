@@ -108,7 +108,7 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                     Program.TypeLine(" and instead of seeing your reflection, you see a ");
                     MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
-                    Program.TypeLine(" motioning to the Runes on either side. \nPerhaps if you could decipher them, you could learn more about the Man trapped in the mirror?");
+                    Program.TypeLine(" motioning to the Runes on either side. \nPerhaps if you could decipher them, you could learn more about the Man trapped in the mirror?\n");
                 }
                 else
                 {
@@ -131,7 +131,9 @@ namespace CastleEscape
                 }
                 else if (Player.CheckInventory("KEY") && !(Player.PlayerLocation == 'E'))
                 {
-                    Program.TypeLine("There is no reason to use a key here");
+                    Program.TypeLine("There is no reason to use a ");
+                    MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
+                    Program.TypeLine(" here.\n");
                 }
                 else if (Player.PlayerLocation == 'E' && (useCommand == "USE KEY" && Player.CheckInventory("KEY") && !Player.CheckInventory("MAGIC BOOK")))
                 {
@@ -139,7 +141,7 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
                     Program.TypeLine(" with a *click*. \nInside, you find a ");
                     MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                    Program.TypeLine(". \nYou take it.");
+                    Program.TypeLine(". \nYou take it.\n");
                     Player.inventory.Add("MAGIC BOOK");
                 }
             }
@@ -225,7 +227,7 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
                     Program.TypeLine(" and gasp! \nThe tower you are in goes down into the clouds. You cannot see the ground below, and start to get the sinking feeling there might be ");
                     MenuText.ChangeTextColor("magic", ConsoleColor.Cyan);
-                    Program.TypeLine(" at play here.");
+                    Program.TypeLine(" at play here.\n");
                 }
                 else
                 {
@@ -269,7 +271,7 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                         Program.TypeLine(". \nHis eyes dart from you, to your hand. \nWhen he sees the ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(", he becomes enraged. \nAre you sure you want to throw the stone at the mirror?");
+                        Program.TypeLine(", he becomes enraged. \nAre you sure you want to throw the stone at the mirror?\n");
                         MenuText.StoneFinalChoice();
                     }
                     else
@@ -307,7 +309,7 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
                     Program.TypeLine(" and begin rifling through the drawers. \nYou dont find anything of use--spare parchment and some ink. \n But wait--reaching under the desk, you find a ");
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                    Program.TypeLine(". \nIt is locked.");
+                    Program.TypeLine(". \nIt is locked.\n");
                 }
                 else
                 {
@@ -329,7 +331,7 @@ namespace CastleEscape
                     Program.TypeLine(" sitting on the ");
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
                     Program.TypeLine(". \nMost of the text is unreadable to you--written in some sort of ancient script. \nAt the bottom of the page, you see these words scrawled in the common tongue:\n");
-                    MenuText.ChangeTextColor("\"The creature in the mirror is not to be trusted.\"", ConsoleColor.Cyan);
+                    MenuText.ChangeTextColor("\"The creature in the mirror is not to be trusted.\"\n", ConsoleColor.Cyan);
                 }
                 else
                 {
@@ -355,7 +357,7 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
                         Program.TypeLine(" in the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        Program.TypeLine(" begins to laugh.\n \n \nWould you like to keep reading?");
+                        Program.TypeLine(" begins to laugh.\n \n \nWould you like to keep reading?\n");
                         MenuText.BookFinalChoice();
                     }
                     else
@@ -390,7 +392,7 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
                         Program.TypeLine(" with a *click*. \nInside, you find a ");
                         MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                        Program.TypeLine(". \nYou take it.");
+                        Program.TypeLine(". \nYou take it.\n");
                         Player.inventory.Add("MAGIC BOOK");
                     }
                     else if (useCommand == "USE SECRET COMPARTMENT" && !Player.CheckInventory("KEY"))
@@ -407,7 +409,7 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
                         Program.TypeLine(" inside the ");
                         MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                        Program.TypeLine(". \nThere is nothing else to find here.");
+                        Program.TypeLine(". \nThere is nothing else to find here.\n");
                     }
                 }
                 else
