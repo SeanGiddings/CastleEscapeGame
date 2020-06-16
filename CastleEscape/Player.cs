@@ -32,16 +32,7 @@ namespace CastleEscape
             }
         }
 
-        public static void DrawPicture() //string ImagePath
-        {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Sean\github\CastleEscape\CastleEscape\Images\North.txt");
 
-            // Display the file contents by using a foreach loop.
-            foreach (string line in lines)
-            {
-                Console.WriteLine(line);
-            }
-        }
 
 
         public void CheckPlayerLocation()
@@ -49,21 +40,25 @@ namespace CastleEscape
             if (PlayerLocation == 'S')
             {
                 Console.Clear();
+                MenuText.DrawPicture(@"Images\South.txt");
                 Console.WriteLine($"You moved South");
             }
             else if (PlayerLocation == 'N')
             {
                 Console.Clear();
+                MenuText.DrawPicture(@"Images\North.txt");
                 Console.WriteLine($"You moved North");
             }
             else if (PlayerLocation == 'E')
             {
                 Console.Clear();
+                MenuText.DrawPicture(@"Images\East.txt");
                 Console.WriteLine($"You moved East");
             }
             else if (PlayerLocation == 'W')
             {
                 Console.Clear();
+                MenuText.DrawPicture(@"Images\West.txt");
                 Console.WriteLine($"You moved West");
             }
         }

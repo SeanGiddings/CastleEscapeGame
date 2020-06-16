@@ -195,6 +195,21 @@ namespace CastleEscape
             Console.ForegroundColor = ConsoleColor.Blue;
         }
 
+        public static void DrawPicture(string filePath) 
+        {
+
+                string[] lines = System.IO.File.ReadAllLines(filePath);
+                foreach (string line in lines)
+                {
+                    Console.WriteLine(line);
+                }
+            
+            //string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Sean\github\CastleEscape\CastleEscape\Images\North.txt");
+
+            // Display the file contents by using a foreach loop.
+
+        }
+
         public static void ChangeTextColor(string keyword, ConsoleColor newColor)
         {
 

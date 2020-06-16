@@ -18,7 +18,7 @@ namespace CastleEscape
             //Player.wentSouth += InventoryCheck;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
-            if (Debug == false)
+            if (Debug == true)
             {
                 MenuText.TitleCard();
                 MenuText.OpeningText();

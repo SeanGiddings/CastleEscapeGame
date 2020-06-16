@@ -46,7 +46,6 @@ namespace CastleEscape
         {
             if (Player.PlayerLocation == 'N')
             {
-                //Player.DrawPicture();
                 Program.TypeLine("You see an ancient, mysterious ");
                 MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                 Program.TypeLine(" with runes etched across both sides.\n");
@@ -420,8 +419,6 @@ namespace CastleEscape
                 }
             }
         }
-
-
 
     }
 }
