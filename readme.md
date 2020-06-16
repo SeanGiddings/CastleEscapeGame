@@ -1,4 +1,4 @@
-![.NET Core](https://github.com/am1983/CastleEscape/workflows/.NET%20Core/badge.svg)
+![.NET Core](https://github.com/SeanGiddings/CastleEscape/workflows/.NET%20Core/badge.svg)
 
 This is just a test project so I can play around with .NET Core solutions, code organization, and GitHub actions.
 
