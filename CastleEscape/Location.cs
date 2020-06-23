@@ -144,6 +144,14 @@ namespace CastleEscape
                     Program.TypeLine(". \nYou take it.\n");
                     Player.inventory.Add("MAGIC BOOK");
                 }
+                else if (Player.PlayerLocation == 'E' && (useCommand == "USE KEY" && Player.CheckInventory("KEY") && Player.CheckInventory("MAGIC BOOK")))
+                {
+                    Program.TypeLine("You have already unlocked the ");
+                    MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
+                    Program.TypeLine(" and found the ");
+                    MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
+                    Program.TypeLine(".\n");
+                }
             }
         }
 

@@ -193,6 +193,7 @@ namespace CastleEscape
             Console.Write(" that is Red can be used             ===");
             Console.WriteLine("\n=== To see your inventory type INV               ===");
             Console.WriteLine("=== To see this menu again, type HELP            ===");
+            Console.WriteLine("=== To end the game, type EXIT                   ===");
             Console.ForegroundColor = ConsoleColor.Blue;
         }
 
