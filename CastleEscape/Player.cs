@@ -3,16 +3,11 @@ using System.Collections.Generic;
 
 namespace CastleEscape
 {
+    //This class handles the player's location, their commands, and inventory
     class Player
     {
-        
+        //
         public static char PlayerLocation;
-
-        public delegate void PlayerLocationEvents(List<string> currentInventory);
-        public static event PlayerLocationEvents wentNorth;
-        public static event PlayerLocationEvents wentSouth;
-        public static event PlayerLocationEvents wentWest;
-        public static event PlayerLocationEvents wentEast;
 
         public static bool IsPlaying = false;
         public static List<string> inventory = new List<string>();
@@ -62,7 +57,7 @@ namespace CastleEscape
                 Console.WriteLine($"You moved West");
             }
         }
-
+        //This method handles the commands the player types in
         public void PlayerCommand()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -72,25 +67,21 @@ namespace CastleEscape
             if (playerCommand == "SOUTH" || playerCommand == "S")
             {
                 PlayerLocation = 'S';
-                //wentSouth?.Invoke(inventory);
                 CheckPlayerLocation();
             }
             else if (playerCommand == "NORTH" || playerCommand == "N")
             {
                 PlayerLocation = 'N';
-                wentNorth?.Invoke(inventory);
                 CheckPlayerLocation();
             }
             else if (playerCommand == "EAST" || playerCommand == "E")
             {
                 PlayerLocation = 'E';
-                wentEast?.Invoke(inventory);
                 CheckPlayerLocation();
             }
             else if (playerCommand == "WEST" || playerCommand == "W")
             {
                 PlayerLocation = 'W';
-                wentWest?.Invoke(inventory);
                 CheckPlayerLocation();
             }
             else if (playerCommand == "EXIT")

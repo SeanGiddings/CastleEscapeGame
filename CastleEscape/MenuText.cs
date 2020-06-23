@@ -2,6 +2,7 @@ using System;
 
 namespace CastleEscape
 {
+    //This class handles Beginning/Ending text, as well as 'pictures'
     class MenuText
     {
         string[] usableWords = { "KEY", "BED", "MIRROR", "COMPASS", "WINDOW", "STONE", "STONES", "DESK", "JOURNAL", "MAGIC BOOK", "SECRET COMPARTMENT" };

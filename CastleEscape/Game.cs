@@ -3,19 +3,14 @@ using System.Collections.Generic;
 
 namespace CastleEscape
 {
+    //This class creates a new game
     class Game
     {
         //Debug = true will turn off the opening text scroll for quick debugging
         private static bool Debug = false;
-        /*
-                private static void InventoryCheck(List<string> currentInventory)
-                {
-                    currentInventory.ForEach(Console.WriteLine);
-                }
-        */
+
         public Game()
         {
-            //Player.wentSouth += InventoryCheck;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Blue;
             if (Debug == false)

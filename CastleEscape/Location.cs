@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace CastleEscape
 {
+    //This class handles Usable Items, the Look Command, and all the location-specific actions
     class Location
     {
 
