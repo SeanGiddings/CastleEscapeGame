@@ -181,14 +181,17 @@ namespace CastleEscape
             Console.WriteLine("=== To examine your surroundings, write LOOK     ===");
             Console.WriteLine("=== To use an item, type USE ______________      ===");
             Console.Write("=== (For example, \"USE ");
-            MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("KEY");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\" or \"USE ");
-            MenuText.ChangeTextColor("COMPASS", ConsoleColor.Red);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("COMPASS");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("\")    ===");
             Console.Write("\n=== Any ");
-            MenuText.ChangeTextColor("ITEM", ConsoleColor.Red);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("ITEM");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(" that is Red can be used             ===");
             Console.WriteLine("\n=== To see your inventory type INV               ===");
@@ -214,18 +217,6 @@ namespace CastleEscape
 
         public static void ChangeTextColor(string keyword, ConsoleColor newColor)
         {
-
-            /*ConsoleColor consoleColor = ConsoleColor.White;
-            try
-            {
-                consoleColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), newColor, true);
-            }
-            catch (Exception)
-            {
-                //Invalid color
-            }
-
-            Console.ForegroundColor = consoleColor;*/
             Console.ForegroundColor = newColor;
             Program.TypeLine(keyword);
             Console.ForegroundColor = ConsoleColor.Blue;
