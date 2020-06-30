@@ -22,6 +22,26 @@ namespace CastleEscape
             }
         }
 
+        //This prints "image" files
+        public static void DrawPicture(string filePath)
+        {
+
+            string[] lines = System.IO.File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
+        //This changes text color and back to blue
+        public static void ChangeTextColor(string keyword, ConsoleColor newColor)
+        {
+            Console.ForegroundColor = newColor;
+            TypeLine(keyword);
+            Console.ForegroundColor = ConsoleColor.Blue;
+        }
+
+
 
         public static void TitleCard()
         {
@@ -234,25 +254,6 @@ namespace CastleEscape
             Console.WriteLine("=== To end the game, type EXIT                   ===");
             Console.ForegroundColor = ConsoleColor.Blue;
         }
-
-        public static void DrawPicture(string filePath)
-        {
-
-            string[] lines = System.IO.File.ReadAllLines(filePath);
-            foreach (string line in lines)
-            {
-                Console.WriteLine(line);
-            }
-        }
-
-        public static void ChangeTextColor(string keyword, ConsoleColor newColor)
-        {
-            Console.ForegroundColor = newColor;
-            TypeLine(keyword);
-            Console.ForegroundColor = ConsoleColor.Blue;
-        }
-
-
 
         public MenuText()
         {
