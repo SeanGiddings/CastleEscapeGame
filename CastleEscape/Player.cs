@@ -28,36 +28,34 @@ namespace CastleEscape
         }
 
 
-
-
         public void CheckPlayerLocation()
         {
             if (PlayerLocation == 'S')
             {
                 Console.Clear();
-                MenuText.DrawPicture(@"Images\South.txt");
+                //MenuText.DrawPicture(@"Images\South.txt");
                 Console.WriteLine($"You moved South");
             }
             else if (PlayerLocation == 'N')
             {
                 Console.Clear();
-                MenuText.DrawPicture(@"Images\North.txt");
+                //MenuText.DrawPicture(@"Images\North.txt");
                 Console.WriteLine($"You moved North");
             }
             else if (PlayerLocation == 'E')
             {
                 Console.Clear();
-                MenuText.DrawPicture(@"Images\East.txt");
+                //MenuText.DrawPicture(@"Images\East.txt");
                 Console.WriteLine($"You moved East");
             }
             else if (PlayerLocation == 'W')
             {
                 Console.Clear();
-                MenuText.DrawPicture(@"Images\West.txt");
+                //MenuText.DrawPicture(@"Images\West.txt");
                 Console.WriteLine($"You moved West");
             }
         }
-        //This method handles the commands the player types in
+        //This method handles the commands the player types into the Console
         public void PlayerCommand()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -66,23 +64,51 @@ namespace CastleEscape
             Console.ForegroundColor = ConsoleColor.Blue;
             if (playerCommand == "SOUTH" || playerCommand == "S")
             {
-                PlayerLocation = 'S';
-                CheckPlayerLocation();
+                if (PlayerLocation == 'S')
+                {
+                    Program.TypeLine("You are already South.\n");
+                }
+                else
+                {
+                    PlayerLocation = 'S';
+                    CheckPlayerLocation();
+                }
             }
             else if (playerCommand == "NORTH" || playerCommand == "N")
             {
-                PlayerLocation = 'N';
-                CheckPlayerLocation();
+                if (PlayerLocation == 'N')
+                {
+                    Program.TypeLine("You are already North.\n");
+                }
+                else
+                {
+                    PlayerLocation = 'N';
+                    CheckPlayerLocation();
+                }
             }
             else if (playerCommand == "EAST" || playerCommand == "E")
             {
-                PlayerLocation = 'E';
-                CheckPlayerLocation();
+                if (PlayerLocation == 'E')
+                {
+                    Program.TypeLine("You are already East.\n");
+                }
+                else
+                {
+                    PlayerLocation = 'E';
+                    CheckPlayerLocation();
+                }
             }
             else if (playerCommand == "WEST" || playerCommand == "W")
             {
-                PlayerLocation = 'W';
-                CheckPlayerLocation();
+                if (PlayerLocation == 'W')
+                {
+                    Program.TypeLine("You are already West.\n");
+                }
+                else
+                {
+                    PlayerLocation = 'W';
+                    CheckPlayerLocation();
+                }
             }
             else if (playerCommand == "EXIT")
             {

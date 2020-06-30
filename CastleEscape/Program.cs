@@ -12,6 +12,7 @@ namespace CastleEscape
             {
                 Console.Write(line[i]);
                 System.Threading.Thread.Sleep(20); // Sleep for 150 milliseconds
+                
                 if (i == line.Length - 1)
                 {
                     //Console.Write("\n");
