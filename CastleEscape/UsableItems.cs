@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace CastleEscape
 {
-    //This class handles Usable Items, the Look Command, and all the location-specific actions
-    class Location
+    //This class handles Usable Items and all the ways they are used.
+    class UsableItems
     {
 
         public static List<string> usableItems = new List<string>();
 
-
-        public Location()
+        //When the game begins, all usable items are added to the list
+        public UsableItems()
         {
             usableItems.Add("USE MIRROR");
             usableItems.Add("USE KEY");
@@ -23,58 +23,6 @@ namespace CastleEscape
             usableItems.Add("USE JOURNAL");
             usableItems.Add("USE MAGIC BOOK");
             usableItems.Add("USE SECRET COMPARTMENT");
-        }
-
-
-        public static void Look()
-        {
-            SouthLook();
-            NorthLook();
-            EastLook();
-            WestLook();
-        }
-
-        public static void SouthLook()
-        {
-            if (Player.PlayerLocation == 'S')
-            {
-                MenuText.TypeLine("You see the ");
-                MenuText.ChangeTextColor("BED", ConsoleColor.Red);
-                MenuText.TypeLine(" you woke up on.\n");
-            }
-        }
-        public static void NorthLook()
-        {
-            if (Player.PlayerLocation == 'N')
-            {
-                MenuText.TypeLine("You see an ancient, mysterious ");
-                MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                MenuText.TypeLine(" with runes etched across both sides.\n");
-            }
-        }
-        public static void EastLook()
-        {
-            if (Player.PlayerLocation == 'E')
-            {
-                MenuText.TypeLine("You see a modest wooden writing ");
-                MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-                MenuText.TypeLine(", with an open ");
-                MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
-                MenuText.TypeLine(" sitting on top.\n");
-            }
-        }
-        public static void WestLook()
-        {
-            if (Player.PlayerLocation == 'W')
-            {
-                MenuText.TypeLine("You see a small ");
-                MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-                MenuText.TypeLine(" that is far too narrow to climb out of.\n");
-                System.Threading.Thread.Sleep(500);
-                MenuText.TypeLine("Below the open window is some broken glass, and a handful of small ");
-                MenuText.ChangeTextColor("STONES", ConsoleColor.Red);
-                MenuText.TypeLine(".\n");
-            }
         }
 
         public static void UseItemCommand(string useCommand)
@@ -100,6 +48,7 @@ namespace CastleEscape
             }
         }
 
+        //All Usable Items, and their text are below here.
         public static void UseMirror(string useCommand)
         {
             if (useCommand == "USE MIRROR")
