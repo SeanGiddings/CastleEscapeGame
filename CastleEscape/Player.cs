@@ -33,25 +33,25 @@ namespace CastleEscape
             if (PlayerLocation == 'S')
             {
                 Console.Clear();
-                //MenuText.DrawPicture(@"Images\South.txt");
+                MenuText.DrawPicture(@"Images\South.txt");
                 Console.WriteLine($"You moved South");
             }
             else if (PlayerLocation == 'N')
             {
                 Console.Clear();
-                //MenuText.DrawPicture(@"Images\North.txt");
+                MenuText.DrawPicture(@"Images\North.txt");
                 Console.WriteLine($"You moved North");
             }
             else if (PlayerLocation == 'E')
             {
                 Console.Clear();
-                //MenuText.DrawPicture(@"Images\East.txt");
+                MenuText.DrawPicture(@"Images\East.txt");
                 Console.WriteLine($"You moved East");
             }
             else if (PlayerLocation == 'W')
             {
                 Console.Clear();
-                //MenuText.DrawPicture(@"Images\West.txt");
+                MenuText.DrawPicture(@"Images\West.txt");
                 Console.WriteLine($"You moved West");
             }
         }
