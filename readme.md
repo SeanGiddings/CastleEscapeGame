@@ -1,7 +1,11 @@
 ![.NET Core](https://github.com/SeanGiddings/CastleEscape/workflows/.NET%20Core/badge.svg)
 
-# Castle Escape
+<h1 align="center">
+Castle Escape
+</h1>
+<p align="center">
 Text Adventure Console App written entirely in C#.
+</p>
 
 ## Project Description
 
