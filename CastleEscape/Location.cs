@@ -69,7 +69,9 @@ namespace CastleEscape
             {
                 MenuText.TypeLine("You see a small ");
                 MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-                MenuText.TypeLine(" that is far too narrow to climb out of.\n Below the open window is some broken glass, and a handful of small ");
+                MenuText.TypeLine(" that is far too narrow to climb out of.\n");
+                System.Threading.Thread.Sleep(500);
+                MenuText.TypeLine("Below the open window is some broken glass, and a handful of small ");
                 MenuText.ChangeTextColor("STONES", ConsoleColor.Red);
                 MenuText.TypeLine(".\n");
             }
@@ -108,7 +110,9 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                     MenuText.TypeLine(" and instead of seeing your reflection, you see a ");
                     MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
-                    MenuText.TypeLine(" motioning to the Runes on either side. \nPerhaps if you could decipher them, you could learn more about the Man trapped in the mirror?\n");
+                    MenuText.TypeLine(" motioning to the Runes on either side.\n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("Perhaps if you could decipher them, you could learn more about the Man trapped in the mirror?\n");
                 }
                 else
                 {
@@ -139,9 +143,13 @@ namespace CastleEscape
                 {
                     MenuText.TypeLine("You unlock the ");
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                    MenuText.TypeLine(" with a *click*. \nInside, you find a ");
+                    MenuText.TypeLine(" with a *click*.\n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("Inside, you find a ");
                     MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                    MenuText.TypeLine(". \nYou take it.\n");
+                    MenuText.TypeLine(". \n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("You take it.\n");
                     Player.inventory.Add("MAGIC BOOK");
                 }
                 else if (Player.PlayerLocation == 'E' && (useCommand == "USE KEY" && Player.CheckInventory("KEY") && Player.CheckInventory("MAGIC BOOK")))
@@ -165,14 +173,18 @@ namespace CastleEscape
                     {
                         MenuText.TypeLine("You climb into the rough bed and notice something inside the pillow... A ");
                         MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
-                        MenuText.TypeLine("? You put it in your bag.\n");
+                        MenuText.TypeLine("?\n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("You put it in your bag.\n");
                         Player.inventory.Add("KEY");
                     }
                     else if (Player.CheckInventory("KEY"))
                     {
                         MenuText.TypeLine("You climb into the rough bed, and remember finding the ");
                         MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
-                        MenuText.TypeLine(" inside the pillow. There's nothing else to find here.\n");
+                        MenuText.TypeLine(" inside the pillow.\n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("There's nothing else to find here.\n");
                     }
                 }
                 else
@@ -233,7 +245,11 @@ namespace CastleEscape
 
                     MenuText.TypeLine("You look out the small ");
                     MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-                    MenuText.TypeLine(" and gasp! \nThe tower you are in goes down into the clouds. You cannot see the ground below, and start to get the sinking feeling there might be ");
+                    MenuText.TypeLine(" and gasp!\n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("The tower you are in goes down into the clouds.\n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("You cannot see the ground below, and start to get the sinking feeling there might be ");
                     MenuText.ChangeTextColor("magic", ConsoleColor.Cyan);
                     MenuText.TypeLine(" at play here.\n");
                 }
@@ -253,11 +269,15 @@ namespace CastleEscape
                 {
                     if (!Player.CheckInventory("STONE"))
                     {
-                        MenuText.TypeLine("You examine the broken glass at your feet. Someone seems to have used a ");
+                        MenuText.TypeLine("You examine the broken glass at your feet.\n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("Someone seems to have used a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
                         MenuText.TypeLine(" to break the ");
                         MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-                        MenuText.TypeLine(". \nYou have no idea why you might need it, but you pick up a ");
+                        MenuText.TypeLine(".\n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("You have no idea why you might need it, but you pick up a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
                         MenuText.TypeLine(" and put it in your pocket.\n");
                         Player.inventory.Add("STONE");
@@ -277,9 +297,15 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
                         MenuText.TypeLine(" in the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        MenuText.TypeLine(". \nHis eyes dart from you, to your hand. \nWhen he sees the ");
+                        MenuText.TypeLine(". \n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("His eyes dart from you, to your hand.\n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("When he sees the ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        MenuText.TypeLine(", he becomes enraged. \nAre you sure you want to throw the stone at the mirror?\n");
+                        MenuText.TypeLine(", he becomes enraged.\n \n \n");
+                        System.Threading.Thread.Sleep(1000);
+                        MenuText.TypeLine("Are you sure you want to throw the stone at the mirror?\n");
                         MenuText.StoneFinalChoice();
                     }
                     else
@@ -315,9 +341,17 @@ namespace CastleEscape
                 {
                     MenuText.TypeLine("You sit at the ");
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-                    MenuText.TypeLine(" and begin rifling through the drawers. \nYou dont find anything of use--spare parchment and some ink. \n But wait--reaching under the desk, you find a ");
+                    MenuText.TypeLine(" and begin rifling through the drawers.\n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("You dont find anything of use--spare parchment and some ink.\n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("But wait--");
+                    System.Threading.Thread.Sleep(1000);
+                    MenuText.TypeLine("reaching under the desk, you find a ");
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                    MenuText.TypeLine(". \nIt is locked.\n");
+                    MenuText.TypeLine(". \n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("It is locked.\n");
                 }
                 else
                 {
@@ -338,7 +372,12 @@ namespace CastleEscape
                     MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
                     MenuText.TypeLine(" sitting on the ");
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-                    MenuText.TypeLine(". \nMost of the text is unreadable to you--written in some sort of ancient script. \nAt the bottom of the page, you see these words scrawled in the common tongue:\n");
+                    MenuText.TypeLine(".\n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("Most of the text is unreadable to you--written in some sort of ancient script.\n");
+                    System.Threading.Thread.Sleep(500);
+                    MenuText.TypeLine("At the bottom of the page, you see these words scrawled in the common tongue:\n");
+                    System.Threading.Thread.Sleep(1000);
                     MenuText.ChangeTextColor("\"The creature in the mirror is not to be trusted.\"\n", ConsoleColor.Cyan);
                 }
                 else
@@ -361,11 +400,15 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                         MenuText.TypeLine(" begin to ");
                         MenuText.ChangeTextColor("glow", ConsoleColor.Cyan);
-                        MenuText.TypeLine(". \nThe ");
+                        MenuText.TypeLine(".\n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("The ");
                         MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
                         MenuText.TypeLine(" in the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        MenuText.TypeLine(" begins to laugh.\n \n \nWould you like to keep reading?\n");
+                        MenuText.TypeLine(" begins to laugh.\n \n \n");
+                        System.Threading.Thread.Sleep(1000);
+                        MenuText.TypeLine("Would you like to keep reading?\n");
                         MenuText.BookFinalChoice();
                     }
                     else
@@ -374,7 +417,9 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                         MenuText.TypeLine(" begin to ");
                         MenuText.ChangeTextColor("glow", ConsoleColor.Cyan);
-                        MenuText.TypeLine(". \nYou shut the book again. Perhaps if you were closer to the ");
+                        MenuText.TypeLine(". \n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("You shut the book again. Perhaps if you were closer to the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
                         MenuText.TypeLine("?\n");
                     }
@@ -398,16 +443,22 @@ namespace CastleEscape
                     {
                         MenuText.TypeLine("You unlock the ");
                         MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                        MenuText.TypeLine(" with a *click*. \nInside, you find a ");
+                        MenuText.TypeLine(" with a *click*.\n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("Inside, you find a ");
                         MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                        MenuText.TypeLine(". \nYou take it.\n");
+                        MenuText.TypeLine(".\n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("You take it.\n");
                         Player.inventory.Add("MAGIC BOOK");
                     }
                     else if (useCommand == "USE SECRET COMPARTMENT" && !Player.CheckInventory("KEY"))
                     {
                         MenuText.TypeLine("You cannot open the ");
                         MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                        MenuText.TypeLine(". \nPerhaps if you had a ");
+                        MenuText.TypeLine(". \n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("Perhaps if you had a ");
                         MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
                         MenuText.TypeLine("?\n");
                     }
@@ -417,7 +468,9 @@ namespace CastleEscape
                         MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
                         MenuText.TypeLine(" inside the ");
                         MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                        MenuText.TypeLine(". \nThere is nothing else to find here.\n");
+                        MenuText.TypeLine(". \n");
+                        System.Threading.Thread.Sleep(500);
+                        MenuText.TypeLine("There is nothing else to find here.\n");
                     }
                 }
                 else

@@ -39,7 +39,7 @@ namespace CastleEscape
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n A Text Adventure Game By Sean Giddings");
             System.Threading.Thread.Sleep(2000);
-            TypeLine("\n \n \n");
+            Console.WriteLine("\n \n \n");
             MenuText.HelpMenu();
             TypeLine("\n \n \n Hit ENTER to begin");
             Console.ReadLine();
@@ -80,14 +80,16 @@ namespace CastleEscape
             TypeLine("You seem to be in a tower. \n");
             System.Threading.Thread.Sleep(textDelay);
             TypeLine("There seems to be no way in or out. \n");
-
+            System.Threading.Thread.Sleep(textDelay);
             Console.ForegroundColor = ConsoleColor.Yellow;
             TypeLine("For Help/Intructions, type \"HELP\" \n");
             Console.ForegroundColor = ConsoleColor.Blue;
+            System.Threading.Thread.Sleep(textDelay);
         }
 
         public static void YouWin()
         {
+            System.Threading.Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(" __   __            _____                              _ _ ");
             Console.WriteLine(" \\ \\ / /__  _   _  | ____|___  ___ __ _ _ __   ___  __| | |");
@@ -95,10 +97,12 @@ namespace CastleEscape
             Console.WriteLine("   | | (_) | |_| | | |___\\__ \\ (_| (_| | |_) |  __/ (_| |_|");
             Console.WriteLine("   |_|\\___/ \\__,_| |_____|___/\\___\\__,_| .__/ \\___|\\__,_(_)");
             Console.WriteLine("                                       |_|                 ");
+            System.Threading.Thread.Sleep(1000);
             PlayAgain();
         }
         public static void GameOver()
         {
+            System.Threading.Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("   ____    _    __  __ _____    _____     _______ ____  ");
             Console.WriteLine("  / ___|  / \\  |  \\/  | ____|  / _ \\ \\   / / ____|  _ \\ ");
@@ -106,6 +110,7 @@ namespace CastleEscape
             Console.WriteLine(" | |_| |/ ___ \\| |  | | |___  | |_| |\\ V / | |___|  _ < ");
             Console.WriteLine("  \\____/_/   \\_\\_|  |_|_____|  \\___/  \\_/  |_____|_| \\_\\");
             Console.WriteLine("                                                        ");
+            System.Threading.Thread.Sleep(1000);
             PlayAgain();
         }
 
@@ -139,9 +144,15 @@ namespace CastleEscape
             Console.ForegroundColor = ConsoleColor.Blue;
             if (playerCommand == "YES" || playerCommand == "Y")
             {
-                TypeLine("\nYou throw the stone as hard as you can at the mirror. \nThere is a huge flash of light. And then--\nWhere the ");
+                TypeLine("\nYou throw the stone as hard as you can at the mirror. \n");
+                System.Threading.Thread.Sleep(500);
+                TypeLine("There is a huge flash of light. And then--\n");
+                System.Threading.Thread.Sleep(1000);
+                TypeLine("Where the ");
                 MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                TypeLine(" stood, there is now a doorway, with a spiral staircase that descends into darkness. \nYou take a deep breath and begin your descent.\n");
+                TypeLine(" stood, there is now a doorway, with a spiral staircase that descends into darkness. \n");
+                System.Threading.Thread.Sleep(500);
+                TypeLine("You take a deep breath and begin your descent.\n");
                 MenuText.YouWin();
             }
             else if (playerCommand == "NO" || playerCommand == "N")
@@ -166,11 +177,19 @@ namespace CastleEscape
             Console.ForegroundColor = ConsoleColor.Blue;
             if (playerCommand == "YES" || playerCommand == "Y")
             {
-                TypeLine("\nThere is a flash of light. When you open your eyes, everything around you is dark. \nBefore you, you see the ");
+                TypeLine("\nThere is a flash of light.\n");
+                System.Threading.Thread.Sleep(500);
+                TypeLine("When you open your eyes, everything around you is dark.\n");
+                System.Threading.Thread.Sleep(500);
+                TypeLine("Before you, you see the ");
                 MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
-                TypeLine(" standing in the tower you were trapped in. \nHe continues to laugh, silently, as he picks up a ");
+                TypeLine(" standing in the tower you were trapped in. \n");
+                System.Threading.Thread.Sleep(500);
+                TypeLine("He continues to laugh, silently, as he picks up a ");
                 MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                TypeLine(" and throws it at you. \nYour view shatters, and everything goes black.\n");
+                TypeLine(" and throws it at you. \n");
+                System.Threading.Thread.Sleep(500);
+                TypeLine("Your view shatters, and everything goes black.\n");
                 MenuText.GameOver();
                 Player.IsPlaying = false;
             }
@@ -224,11 +243,6 @@ namespace CastleEscape
             {
                 Console.WriteLine(line);
             }
-
-            //string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Sean\github\CastleEscape\CastleEscape\Images\North.txt");
-
-            // Display the file contents by using a foreach loop.
-
         }
 
         public static void ChangeTextColor(string keyword, ConsoleColor newColor)
