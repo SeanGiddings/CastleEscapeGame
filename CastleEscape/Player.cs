@@ -66,7 +66,7 @@ namespace CastleEscape
             {
                 if (PlayerLocation == 'S')
                 {
-                    Program.TypeLine("You are already South.\n");
+                    MenuText.TypeLine("You are already South.\n");
                 }
                 else
                 {
@@ -78,7 +78,7 @@ namespace CastleEscape
             {
                 if (PlayerLocation == 'N')
                 {
-                    Program.TypeLine("You are already North.\n");
+                    MenuText.TypeLine("You are already North.\n");
                 }
                 else
                 {
@@ -90,7 +90,7 @@ namespace CastleEscape
             {
                 if (PlayerLocation == 'E')
                 {
-                    Program.TypeLine("You are already East.\n");
+                    MenuText.TypeLine("You are already East.\n");
                 }
                 else
                 {
@@ -102,7 +102,7 @@ namespace CastleEscape
             {
                 if (PlayerLocation == 'W')
                 {
-                    Program.TypeLine("You are already West.\n");
+                    MenuText.TypeLine("You are already West.\n");
                 }
                 else
                 {

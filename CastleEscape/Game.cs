@@ -19,7 +19,7 @@ namespace CastleEscape
                 MenuText.OpeningText();
             }
 
-            Program.TypeLine("What would you like to do?\n");
+            MenuText.TypeLine("What would you like to do?\n");
             Location location = new Location();
             Player player = new Player();
         }

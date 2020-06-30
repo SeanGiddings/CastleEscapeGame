@@ -38,40 +38,40 @@ namespace CastleEscape
         {
             if (Player.PlayerLocation == 'S')
             {
-                Program.TypeLine("You see the ");
+                MenuText.TypeLine("You see the ");
                 MenuText.ChangeTextColor("BED", ConsoleColor.Red);
-                Program.TypeLine(" you woke up on.\n");
+                MenuText.TypeLine(" you woke up on.\n");
             }
         }
         public static void NorthLook()
         {
             if (Player.PlayerLocation == 'N')
             {
-                Program.TypeLine("You see an ancient, mysterious ");
+                MenuText.TypeLine("You see an ancient, mysterious ");
                 MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                Program.TypeLine(" with runes etched across both sides.\n");
+                MenuText.TypeLine(" with runes etched across both sides.\n");
             }
         }
         public static void EastLook()
         {
             if (Player.PlayerLocation == 'E')
             {
-                Program.TypeLine("You see a modest wooden writing ");
+                MenuText.TypeLine("You see a modest wooden writing ");
                 MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-                Program.TypeLine(", with an open ");
+                MenuText.TypeLine(", with an open ");
                 MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
-                Program.TypeLine(" sitting on top.\n");
+                MenuText.TypeLine(" sitting on top.\n");
             }
         }
         public static void WestLook()
         {
             if (Player.PlayerLocation == 'W')
             {
-                Program.TypeLine("You see a small ");
+                MenuText.TypeLine("You see a small ");
                 MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-                Program.TypeLine(" that is far too narrow to climb out of.\n Below the open window is some broken glass, and a handful of small ");
+                MenuText.TypeLine(" that is far too narrow to climb out of.\n Below the open window is some broken glass, and a handful of small ");
                 MenuText.ChangeTextColor("STONES", ConsoleColor.Red);
-                Program.TypeLine(".\n");
+                MenuText.TypeLine(".\n");
             }
         }
 
@@ -92,9 +92,9 @@ namespace CastleEscape
             }
             else
             {
-                Program.TypeLine($"{useCommand} is not a proper command. Type ");
+                MenuText.TypeLine($"{useCommand} is not a proper command. Type ");
                 MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
-                Program.TypeLine(" for assitance with the USE command.\n");
+                MenuText.TypeLine(" for assitance with the USE command.\n");
             }
         }
 
@@ -104,17 +104,17 @@ namespace CastleEscape
             {
                 if (Player.PlayerLocation == 'N')
                 {
-                    Program.TypeLine("You look at the ");
+                    MenuText.TypeLine("You look at the ");
                     MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                    Program.TypeLine(" and instead of seeing your reflection, you see a ");
+                    MenuText.TypeLine(" and instead of seeing your reflection, you see a ");
                     MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
-                    Program.TypeLine(" motioning to the Runes on either side. \nPerhaps if you could decipher them, you could learn more about the Man trapped in the mirror?\n");
+                    MenuText.TypeLine(" motioning to the Runes on either side. \nPerhaps if you could decipher them, you could learn more about the Man trapped in the mirror?\n");
                 }
                 else
                 {
-                    Program.TypeLine("You are not close enough to the ");
+                    MenuText.TypeLine("You are not close enough to the ");
                     MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                    Program.TypeLine(" to use it.\n");
+                    MenuText.TypeLine(" to use it.\n");
                 }
             }
         }
@@ -125,32 +125,32 @@ namespace CastleEscape
             {
                 if (!Player.CheckInventory("KEY"))
                 {
-                    Program.TypeLine("You dont have a ");
+                    MenuText.TypeLine("You dont have a ");
                     MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
-                    Program.TypeLine(".\n");
+                    MenuText.TypeLine(".\n");
                 }
                 else if (Player.CheckInventory("KEY") && !(Player.PlayerLocation == 'E'))
                 {
-                    Program.TypeLine("There is no reason to use a ");
+                    MenuText.TypeLine("There is no reason to use a ");
                     MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
-                    Program.TypeLine(" here.\n");
+                    MenuText.TypeLine(" here.\n");
                 }
                 else if (Player.PlayerLocation == 'E' && (useCommand == "USE KEY" && Player.CheckInventory("KEY") && !Player.CheckInventory("MAGIC BOOK")))
                 {
-                    Program.TypeLine("You unlock the ");
+                    MenuText.TypeLine("You unlock the ");
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                    Program.TypeLine(" with a *click*. \nInside, you find a ");
+                    MenuText.TypeLine(" with a *click*. \nInside, you find a ");
                     MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                    Program.TypeLine(". \nYou take it.\n");
+                    MenuText.TypeLine(". \nYou take it.\n");
                     Player.inventory.Add("MAGIC BOOK");
                 }
                 else if (Player.PlayerLocation == 'E' && (useCommand == "USE KEY" && Player.CheckInventory("KEY") && Player.CheckInventory("MAGIC BOOK")))
                 {
-                    Program.TypeLine("You have already unlocked the ");
+                    MenuText.TypeLine("You have already unlocked the ");
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                    Program.TypeLine(" and found the ");
+                    MenuText.TypeLine(" and found the ");
                     MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                    Program.TypeLine(".\n");
+                    MenuText.TypeLine(".\n");
                 }
             }
         }
@@ -163,23 +163,23 @@ namespace CastleEscape
                 {
                     if (!Player.CheckInventory("KEY"))
                     {
-                        Program.TypeLine("You climb into the rough bed and notice something inside the pillow... A ");
+                        MenuText.TypeLine("You climb into the rough bed and notice something inside the pillow... A ");
                         MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
-                        Program.TypeLine("? You put it in your bag.\n");
+                        MenuText.TypeLine("? You put it in your bag.\n");
                         Player.inventory.Add("KEY");
                     }
                     else if (Player.CheckInventory("KEY"))
                     {
-                        Program.TypeLine("You climb into the rough bed, and remember finding the ");
+                        MenuText.TypeLine("You climb into the rough bed, and remember finding the ");
                         MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
-                        Program.TypeLine(" inside the pillow. There's nothing else to find here.\n");
+                        MenuText.TypeLine(" inside the pillow. There's nothing else to find here.\n");
                     }
                 }
                 else
                 {
-                    Program.TypeLine("You are not close enough to the ");
+                    MenuText.TypeLine("You are not close enough to the ");
                     MenuText.ChangeTextColor("BED", ConsoleColor.Red);
-                    Program.TypeLine(" to use it.\n");
+                    MenuText.TypeLine(" to use it.\n");
                 }
             }
         }
@@ -189,13 +189,13 @@ namespace CastleEscape
             static void CompassText()
             {
                 {
-                    Program.TypeLine("There are four sides to this room. \nTo the North, a ");
+                    MenuText.TypeLine("There are four sides to this room. \nTo the North, a ");
                     MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                    Program.TypeLine(".\nTo the East, ");
+                    MenuText.TypeLine(".\nTo the East, ");
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-                    Program.TypeLine(".\nTo the South, a ");
+                    MenuText.TypeLine(".\nTo the South, a ");
                     MenuText.ChangeTextColor("BED", ConsoleColor.Red);
-                    Program.TypeLine(".\nTo the West, a ");
+                    MenuText.TypeLine(".\nTo the West, a ");
                     MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
                 }
             }
@@ -204,22 +204,22 @@ namespace CastleEscape
                 if (Player.PlayerLocation == 'S')
                 {
                     CompassText();
-                    Program.TypeLine($".\n(You are South) \n");
+                    MenuText.TypeLine($".\n(You are South) \n");
                 }
                 else if (Player.PlayerLocation == 'N')
                 {
                     CompassText();
-                    Program.TypeLine($".\n(You are North) \n");
+                    MenuText.TypeLine($".\n(You are North) \n");
                 }
                 else if (Player.PlayerLocation == 'E')
                 {
                     CompassText();
-                    Program.TypeLine($".\n(You are East) \n");
+                    MenuText.TypeLine($".\n(You are East) \n");
                 }
                 else if (Player.PlayerLocation == 'W')
                 {
                     CompassText();
-                    Program.TypeLine($".\n(You are West) \n");
+                    MenuText.TypeLine($".\n(You are West) \n");
                 }
             }
         }
@@ -231,17 +231,17 @@ namespace CastleEscape
                 if (Player.PlayerLocation == 'W')
                 {
 
-                    Program.TypeLine("You look out the small ");
+                    MenuText.TypeLine("You look out the small ");
                     MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-                    Program.TypeLine(" and gasp! \nThe tower you are in goes down into the clouds. You cannot see the ground below, and start to get the sinking feeling there might be ");
+                    MenuText.TypeLine(" and gasp! \nThe tower you are in goes down into the clouds. You cannot see the ground below, and start to get the sinking feeling there might be ");
                     MenuText.ChangeTextColor("magic", ConsoleColor.Cyan);
-                    Program.TypeLine(" at play here.\n");
+                    MenuText.TypeLine(" at play here.\n");
                 }
                 else
                 {
-                    Program.TypeLine("You are not close enough to the ");
+                    MenuText.TypeLine("You are not close enough to the ");
                     MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-                    Program.TypeLine(" to use it.\n");
+                    MenuText.TypeLine(" to use it.\n");
                 }
             }
         }
@@ -253,55 +253,55 @@ namespace CastleEscape
                 {
                     if (!Player.CheckInventory("STONE"))
                     {
-                        Program.TypeLine("You examine the broken glass at your feet. Someone seems to have used a ");
+                        MenuText.TypeLine("You examine the broken glass at your feet. Someone seems to have used a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(" to break the ");
+                        MenuText.TypeLine(" to break the ");
                         MenuText.ChangeTextColor("WINDOW", ConsoleColor.Red);
-                        Program.TypeLine(". \nYou have no idea why you might need it, but you pick up a ");
+                        MenuText.TypeLine(". \nYou have no idea why you might need it, but you pick up a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(" and put it in your pocket.\n");
+                        MenuText.TypeLine(" and put it in your pocket.\n");
                         Player.inventory.Add("STONE");
                     }
                     else if (Player.CheckInventory("STONE"))
                     {
-                        Program.TypeLine("You have already picked up a ");
+                        MenuText.TypeLine("You have already picked up a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(" from the broken glass at your feet. \nYou decide you don't need a second one. \n");
+                        MenuText.TypeLine(" from the broken glass at your feet. \nYou decide you don't need a second one. \n");
                     }
                 }
                 else if (Player.PlayerLocation == 'N')
                 {
                     if (Player.CheckInventory("STONE"))
                     {
-                        Program.TypeLine("You pull the stone out of your pocket and look at the ");
+                        MenuText.TypeLine("You pull the stone out of your pocket and look at the ");
                         MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
-                        Program.TypeLine(" in the ");
+                        MenuText.TypeLine(" in the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        Program.TypeLine(". \nHis eyes dart from you, to your hand. \nWhen he sees the ");
+                        MenuText.TypeLine(". \nHis eyes dart from you, to your hand. \nWhen he sees the ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(", he becomes enraged. \nAre you sure you want to throw the stone at the mirror?\n");
+                        MenuText.TypeLine(", he becomes enraged. \nAre you sure you want to throw the stone at the mirror?\n");
                         MenuText.StoneFinalChoice();
                     }
                     else
                     {
-                        Program.TypeLine("You don't have a ");
+                        MenuText.TypeLine("You don't have a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(". \n");
+                        MenuText.TypeLine(". \n");
                     }
                 }
                 else
                 {
                     if (Player.CheckInventory("STONE"))
                     {
-                        Program.TypeLine("There's no reason to use a ");
+                        MenuText.TypeLine("There's no reason to use a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(" here. \n");
+                        MenuText.TypeLine(" here. \n");
                     }
                     else if (!Player.CheckInventory("STONE"))
                     {
-                        Program.TypeLine("You don't have a ");
+                        MenuText.TypeLine("You don't have a ");
                         MenuText.ChangeTextColor("STONE", ConsoleColor.Red);
-                        Program.TypeLine(". \n");
+                        MenuText.TypeLine(". \n");
                     }
                 }
             }
@@ -313,17 +313,17 @@ namespace CastleEscape
             {
                 if (Player.PlayerLocation == 'E')
                 {
-                    Program.TypeLine("You sit at the ");
+                    MenuText.TypeLine("You sit at the ");
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-                    Program.TypeLine(" and begin rifling through the drawers. \nYou dont find anything of use--spare parchment and some ink. \n But wait--reaching under the desk, you find a ");
+                    MenuText.TypeLine(" and begin rifling through the drawers. \nYou dont find anything of use--spare parchment and some ink. \n But wait--reaching under the desk, you find a ");
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                    Program.TypeLine(". \nIt is locked.\n");
+                    MenuText.TypeLine(". \nIt is locked.\n");
                 }
                 else
                 {
-                    Program.TypeLine("You are not close enough to the ");
+                    MenuText.TypeLine("You are not close enough to the ");
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-                    Program.TypeLine(" to use it.\n");
+                    MenuText.TypeLine(" to use it.\n");
                 }
             }
         }
@@ -334,18 +334,18 @@ namespace CastleEscape
             {
                 if (Player.PlayerLocation == 'E')
                 {
-                    Program.TypeLine("You look at the ");
+                    MenuText.TypeLine("You look at the ");
                     MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
-                    Program.TypeLine(" sitting on the ");
+                    MenuText.TypeLine(" sitting on the ");
                     MenuText.ChangeTextColor("DESK", ConsoleColor.Red);
-                    Program.TypeLine(". \nMost of the text is unreadable to you--written in some sort of ancient script. \nAt the bottom of the page, you see these words scrawled in the common tongue:\n");
+                    MenuText.TypeLine(". \nMost of the text is unreadable to you--written in some sort of ancient script. \nAt the bottom of the page, you see these words scrawled in the common tongue:\n");
                     MenuText.ChangeTextColor("\"The creature in the mirror is not to be trusted.\"\n", ConsoleColor.Cyan);
                 }
                 else
                 {
-                    Program.TypeLine("You are not close enough to the ");
+                    MenuText.TypeLine("You are not close enough to the ");
                     MenuText.ChangeTextColor("JOURNAL", ConsoleColor.Red);
-                    Program.TypeLine(" to use it.\n");
+                    MenuText.TypeLine(" to use it.\n");
                 }
             }
         }
@@ -357,33 +357,33 @@ namespace CastleEscape
                 {
                     if (Player.PlayerLocation == 'N')
                     {
-                        Program.TypeLine("You crack open the musty tome, and immediately the runes on the ");
+                        MenuText.TypeLine("You crack open the musty tome, and immediately the runes on the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        Program.TypeLine(" begin to ");
+                        MenuText.TypeLine(" begin to ");
                         MenuText.ChangeTextColor("glow", ConsoleColor.Cyan);
-                        Program.TypeLine(". \nThe ");
+                        MenuText.TypeLine(". \nThe ");
                         MenuText.ChangeTextColor("STRANGE MAN", ConsoleColor.Cyan);
-                        Program.TypeLine(" in the ");
+                        MenuText.TypeLine(" in the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        Program.TypeLine(" begins to laugh.\n \n \nWould you like to keep reading?\n");
+                        MenuText.TypeLine(" begins to laugh.\n \n \nWould you like to keep reading?\n");
                         MenuText.BookFinalChoice();
                     }
                     else
                     {
-                        Program.TypeLine("You crack open the musty tome, and immediately the runes on the ");
+                        MenuText.TypeLine("You crack open the musty tome, and immediately the runes on the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        Program.TypeLine(" begin to ");
+                        MenuText.TypeLine(" begin to ");
                         MenuText.ChangeTextColor("glow", ConsoleColor.Cyan);
-                        Program.TypeLine(". \nYou shut the book again. Perhaps if you were closer to the ");
+                        MenuText.TypeLine(". \nYou shut the book again. Perhaps if you were closer to the ");
                         MenuText.ChangeTextColor("MIRROR", ConsoleColor.Red);
-                        Program.TypeLine("?\n");
+                        MenuText.TypeLine("?\n");
                     }
                 }
                 else
                 {
-                    Program.TypeLine("You dont have a ");
+                    MenuText.TypeLine("You dont have a ");
                     MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                    Program.TypeLine(".\n");
+                    MenuText.TypeLine(".\n");
                 }
             }
         }
@@ -396,35 +396,35 @@ namespace CastleEscape
                 {
                     if ((Player.CheckInventory("KEY") && !Player.CheckInventory("MAGIC BOOK")) || (Player.CheckInventory("KEY") && !Player.CheckInventory("MAGIC BOOK")))
                     {
-                        Program.TypeLine("You unlock the ");
+                        MenuText.TypeLine("You unlock the ");
                         MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                        Program.TypeLine(" with a *click*. \nInside, you find a ");
+                        MenuText.TypeLine(" with a *click*. \nInside, you find a ");
                         MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                        Program.TypeLine(". \nYou take it.\n");
+                        MenuText.TypeLine(". \nYou take it.\n");
                         Player.inventory.Add("MAGIC BOOK");
                     }
                     else if (useCommand == "USE SECRET COMPARTMENT" && !Player.CheckInventory("KEY"))
                     {
-                        Program.TypeLine("You cannot open the ");
+                        MenuText.TypeLine("You cannot open the ");
                         MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                        Program.TypeLine(". \nPerhaps if you had a ");
+                        MenuText.TypeLine(". \nPerhaps if you had a ");
                         MenuText.ChangeTextColor("KEY", ConsoleColor.Red);
-                        Program.TypeLine("?\n");
+                        MenuText.TypeLine("?\n");
                     }
                     else if (Player.CheckInventory("MAGIC BOOK"))
                     {
-                        Program.TypeLine("You have already found the ");
+                        MenuText.TypeLine("You have already found the ");
                         MenuText.ChangeTextColor("MAGIC BOOK", ConsoleColor.Red);
-                        Program.TypeLine(" inside the ");
+                        MenuText.TypeLine(" inside the ");
                         MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                        Program.TypeLine(". \nThere is nothing else to find here.\n");
+                        MenuText.TypeLine(". \nThere is nothing else to find here.\n");
                     }
                 }
                 else
                 {
-                    Program.TypeLine("There isn't a ");
+                    MenuText.TypeLine("There isn't a ");
                     MenuText.ChangeTextColor("SECRET COMPARTMENT", ConsoleColor.Red);
-                    Program.TypeLine(" here.\n");
+                    MenuText.TypeLine(" here.\n");
                 }
             }
         }
