@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 namespace CastleEscape
 {
-    //This class handles Usable Items and all the ways they are used.
+    /// <summary>
+    ///  This class handles Usable Items and all the ways they are used.
+    /// </summary>
     class UsableItems
     {
 

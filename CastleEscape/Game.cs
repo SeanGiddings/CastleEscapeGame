@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 namespace CastleEscape
 {
-    //This class creates a new game
+    /// <summary>
+    /// This class creates a new game
+    /// </summary>
     class Game
     {
         //Debug = true will turn off the opening text scroll for quick debugging

@@ -2,7 +2,9 @@ using System;
 
 namespace CastleEscape
 {
-    //This class handles the LOOK command
+    /// <summary>
+    /// This class handles the LOOK command
+    /// </summary>
     class Look
     {
         public static void LookCommand()

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 namespace CastleEscape
 {
-    //This class handles the player's location, their commands, and inventory
+    /// <summary>
+    /// This class handles the player's location, their commands, and inventory
+    /// </summary>
     class Player
     {
         //
