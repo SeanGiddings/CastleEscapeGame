@@ -22,3 +22,11 @@ Castle Escape is an old-school Text Adventure game played entirely in the consol
 ## Instructions to run Castle Escape: 
 
 To run Castle Escape, clone this repository and use the **dotnet run** command in the VS Code terminal.
+
+## Tips and Tricks to Get Started
+
+1. At any time, type HELP to bring up a list of all the commands that can be used in the game.
+1. Whenever in a new location, begin by typing LOOK. This will let you see what can be used around you.
+1. Any words that appear RED can be used with the USE command.
+1. You can see what you are carrying at any time by typing INV. All of those items are usable, too.
+1. You can return to previously visited locations. Perhaps you have picked up an item that gives you a new option?
