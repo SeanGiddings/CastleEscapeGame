@@ -8,7 +8,6 @@ namespace CastleEscape
     /// </summary>
     class Player
     {
-        //
         public static char PlayerLocation;
 
         public static bool IsPlaying = false;
@@ -17,12 +16,12 @@ namespace CastleEscape
         public Player()
         {
             IsPlaying = true;
-            //Player always starts to the South of the room.
+            // Player always starts to the South of the room.
             PlayerLocation = 'S';
             inventory.Clear();
             inventory.Add("COMPASS");
 
-            //This while loop ensures the game always reverts back to the player command prompt)
+            // This while loop ensures the game always reverts back to the player command prompt)
             while (IsPlaying)
             {
                 PlayerCommand();
@@ -57,7 +56,7 @@ namespace CastleEscape
                 Console.WriteLine($"You moved West");
             }
         }
-        //This method handles the commands the player types into the Console
+        // This method handles the commands the player types into the Console
         public void PlayerCommand()
         {
             Console.ForegroundColor = ConsoleColor.White;

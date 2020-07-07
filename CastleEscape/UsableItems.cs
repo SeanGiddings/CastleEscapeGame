@@ -11,7 +11,7 @@ namespace CastleEscape
 
         public static List<string> usableItems = new List<string>();
 
-        //When the game begins, all usable items are added to the list
+        // When the game begins, all usable items are added to the list
         public UsableItems()
         {
             usableItems.Add("USE MIRROR");
@@ -46,11 +46,11 @@ namespace CastleEscape
             {
                 MenuText.TypeLine($"{useCommand} is not a proper command. Type ");
                 MenuText.ChangeTextColor("\"HELP\"", ConsoleColor.Yellow);
-                MenuText.TypeLine(" for assitance with the USE command.\n");
+                MenuText.TypeLine(" for assistance with the USE command.\n");
             }
         }
 
-        //All Usable Items, and their text are below here.
+        // All Usable Items, and their text are below here.
         public static void UseMirror(string useCommand)
         {
             if (useCommand == "USE MIRROR")

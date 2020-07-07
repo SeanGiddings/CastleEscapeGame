@@ -16,15 +16,10 @@ namespace CastleEscape
             {
                 Console.Write(line[i]);
                 System.Threading.Thread.Sleep(20); // Sleep for 150 milliseconds
-
-                if (i == line.Length - 1)
-                {
-                    //Console.Write("\n");
-                }
             }
         }
 
-        //This prints "image" files
+        // This prints "image" files
         public static void DrawPicture(string filePath)
         {
 
@@ -35,7 +30,7 @@ namespace CastleEscape
             }
         }
 
-        //This changes text color and back to blue
+        // This changes text color and back to blue
         public static void ChangeTextColor(string keyword, ConsoleColor newColor)
         {
             Console.ForegroundColor = newColor;
@@ -104,7 +99,7 @@ namespace CastleEscape
             TypeLine("There seems to be no way in or out. \n");
             System.Threading.Thread.Sleep(textDelay);
             Console.ForegroundColor = ConsoleColor.Yellow;
-            TypeLine("For Help/Intructions, type \"HELP\" \n");
+            TypeLine("For Help/Instructions, type \"HELP\" \n");
             Console.ForegroundColor = ConsoleColor.Blue;
             System.Threading.Thread.Sleep(textDelay);
         }

@@ -8,7 +8,7 @@ namespace CastleEscape
     /// </summary>
     class Game
     {
-        //Debug = true will turn off the opening text scroll for quick debugging
+        // Debug = true will turn off the opening text scroll for quick debugging
         private static bool Debug = false;
 
         public Game()
